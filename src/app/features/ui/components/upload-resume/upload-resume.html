@@ -1,0 +1,45 @@
+<div class="hero-upload-card surface-glass w-full max-w-md cursor-pointer rounded-2xl px-8 py-10 sm:px-10 sm:py-11"
+  [class.drop-zone--active]="isDragOver" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)"
+  (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+  @if (selectedFileName) {
+  <div
+    class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 shadow-md">
+    <svg class="h-12 w-12 text-white" fill="currentColor" width="800px" height="800px" viewBox="-6 0 46 46"
+      xmlns="http://www.w3.org/2000/svg">
+      <path id="_12.File" data-name="12.File"
+        d="M37,47H11a4,4,0,0,1-4-4V5a4,4,0,0,1,4-4H30a.984.984,0,0,1,.776.395l9.829,9.829A.981.981,0,0,1,41,12h0V43A4,4,0,0,1,37,47ZM31,4.381V11h6.619ZM39,13H30a1,1,0,0,1-1-1V3H11A2,2,0,0,0,9,5V43a2,2,0,0,0,2,2H37a2,2,0,0,0,2-2ZM33,39H15a1,1,0,0,1,0-2H33a1,1,0,0,1,0,2Zm0-8H15a1,1,0,0,1,0-2H33a1,1,0,0,1,0,2Zm0-8H15a1,1,0,0,1,0-2H33a1,1,0,0,1,0,2Z"
+        transform="translate(-7 -1)" fill-rule="evenodd" />
+    </svg>
+  </div>
+  <p class="drop-zone__file mb-6">{{ selectedFileName }}</p>
+  }
+  @else{
+  <div
+    class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 shadow-md">
+    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+    </svg>
+  </div>
+  <p class="mb-1 text-base font-semibold text-white sm:text-lg">Drag &amp; Drop your resume</p>
+  <p class="mb-5 text-sm text-white/70">or click to browse</p>
+  <p class="mb-6 text-xs text-white/60">PDF, DOC, DOCX (Max 10MB)</p>
+  }
+  <input type="file" class="hidden" [id]="resumeFileInputId"
+    accept=".pdf,.docx,.txt,.md,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/markdown"
+    (change)="onFileSelected($event)">
+  <label [attr.for]="resumeFileInputId"
+    class="polish-btn rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:border-white/40 hover:bg-white/[0.18]">
+    Choose File
+  </label>
+
+
+</div>
+
+@if (selectedFileName) {
+<button type="button" (click)="triggerAnalysis()"
+  class="hero-cta-primary glow-button mt-8 rounded-full bg-gradient-to-r from-primary-blue to-primary-purple px-10 py-4 text-base font-semibold text-white sm:mt-9 sm:px-12 sm:py-[1.15rem] sm:text-lg">
+  Analyze My Resume &amp; Get Score →
+</button>
+}

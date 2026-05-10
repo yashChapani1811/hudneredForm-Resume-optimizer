@@ -1,0 +1,145 @@
+<div class="score-root">
+  <header class="score-card__header">
+    <h3 class="score-card__title">AI resume check</h3>
+    <p class="score-card__subtitle">
+      Scores and suggestions from your configured OpenRouter model. Results are guidance, not hiring decisions.
+    </p>
+  </header>
+
+  @if (ai.showWaitingHint()) {
+    <p class="score-placeholder">Upload a PDF, .docx, .txt, or .md resume above to run the analysis.</p>
+  }
+
+  @if (ai.isAnalyzing()) {
+    <div class="shimmer" role="status" aria-live="polite" aria-label="Analyzing resume">
+      <div class="shimmer__header">
+        <div class="shimmer__ring shimmer-anim" aria-hidden="true"></div>
+        <div class="shimmer__header-lines">
+          <div class="shimmer__line shimmer-anim shimmer__line--summary"></div>
+          <div class="shimmer__line shimmer-anim"></div>
+          <div class="shimmer__line shimmer-anim shimmer__line--short"></div>
+        </div>
+      </div>
+      <div class="shimmer__block">
+        <div class="shimmer__block-title shimmer-anim"></div>
+        <div class="shimmer__line shimmer-anim"></div>
+        <div class="shimmer__line shimmer-anim shimmer__line--short"></div>
+      </div>
+      <div class="shimmer__block">
+        <div class="shimmer__block-title shimmer-anim"></div>
+        <div class="shimmer__line shimmer-anim"></div>
+        <div class="shimmer__line shimmer-anim"></div>
+        <div class="shimmer__line shimmer-anim shimmer__line--short"></div>
+      </div>
+    </div>
+  }
+
+  @if (ai.analysisError(); as err) {
+    <div class="state state--error" role="alert">
+      <p class="state__msg">{{ err }}</p>
+      @if (ai.hasExtractedText()) {
+        <button type="button" class="btn-retry" (click)="ai.runAnalysis()">Try again</button>
+      }
+    </div>
+  }
+
+  @if (ai.analysis(); as r) {
+    <div class="demo-grid">
+      <div class="demo-card demo-card--preview">
+        <div class="demo-head">
+          <div class="demo-dots">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--amber"></span>
+            <span class="dot dot--green"></span>
+          </div>
+          <span class="demo-file">resume_preview.pdf</span>
+          <span class="demo-sync">Synced</span>
+        </div>
+        <div class="demo-body p-6">
+          <div>
+            <p class="demo-kicker">Candidate</p>
+            <h4 class="demo-name">Resume analysis</h4>
+            <p class="demo-role">AI-generated from uploaded resume</p>
+          </div>
+
+          <p class="demo-summary">{{ r.summary }}</p>
+
+          <div class="demo-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="demo-mini-grid">
+            <section class="demo-mini">
+              <p class="demo-mini__title">Strengths</p>
+              <ul class="demo-list">
+                @for (item of r.strengths.slice(0, 2); track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            </section>
+
+            <section class="demo-mini">
+              <p class="demo-mini__title">Skills</p>
+              <div class="demo-tags">
+                @if (r.atsNotes.length > 0) { 
+                  @for (note of r.atsNotes.slice(0, 3); track note) {
+                    <span>{{ note }}</span>
+                  }
+                } @else {
+                  <span>No skills found</span>
+                }
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-side">
+        <section class="demo-card demo-card--score">
+          <p class="demo-side__label">Resume score</p>
+          <div class="relative w-36 h-36">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3"></path>
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#scoreGrad)" stroke-width="3" [attr.stroke-dasharray]="r.overallScore + ', 100'"></path>
+                <defs>
+                    <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#2563EB"></stop>
+                        <stop offset="100%" stop-color="#7C3AED"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-4xl font-black text-white">{{ r.overallScore }}</span>
+                <span class="text-xs text-white/50">out of 100</span>
+            </div>
+        </div>
+
+
+          <p class="demo-side__note">{{ scoreSummary(r) }}</p>
+        </section>
+
+        <section class="demo-card demo-card--suggestions">
+          <p class="demo-side__title">Top suggestions</p>
+          <ul class="suggestion-list">
+            @if (topSuggestions(r).length > 0) {
+            @for (item of topSuggestions(r); track item; let i = $index) {
+              <li>
+                <span class="bullet bullet-{{ i }}"></span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            } @else {
+              <li>No suggestions found</li>
+            }
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    @if (ai.hasExtractedText()) {
+      <button type="button" class="btn-secondary" (click)="ai.runAnalysis()">Run analysis again</button>
+    }
+  }
+</div>
