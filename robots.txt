@@ -1,0 +1,31 @@
+# HundredForm Robots.txt
+# https://www.hundredform.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl main assets
+Allow: /css/
+Allow: /js/
+Allow: /media/
+
+# Disallow crawling of internal app or private data
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_internal/
+Disallow: /app/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://www.hundredform.com/sitemap.xml
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/

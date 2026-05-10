@@ -1,0 +1,9 @@
+# Local secrets (OpenRouter key for landing-server.mjs)
+.env
+
+# Optional deploy bundle folder
+/site
+
+# OS / editor
+.DS_Store
+Thumbs.db

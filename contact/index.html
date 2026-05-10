@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HundredForm | Get in Touch</title>
+    <meta name="description"
+        content="Contact HundredForm for support, feedback, or partnerships. Get help with your resume optimization or AI-powered career tools.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hundredform.com/contact/">
+    <meta property="og:title" content="Contact Us - HundredForm">
+    <meta property="og:description" content="Contact HundredForm for support, feedback, or partnerships.">
+    <meta property="og:image" content="https://hundredform.com/images/og-contact.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hundredform.com/contact/">
+    <meta property="twitter:title" content="Contact Us - HundredForm">
+    <meta property="twitter:description" content="Contact HundredForm for support, feedback, or partnerships.">
+    <meta property="twitter:image" content="https://hundredform.com/images/og-contact.jpg">
+
+
+    <!-- Geo-targeting: India & USA -->
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="India">
+    <meta name="ICBM" content="20.5937, 78.9629">
+    <meta name="DC.language" content="en">
+
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+
+    <!-- Google Tag Manager / GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0Q62HTX5L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-S0Q62HTX5L');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#2563EB',
+                        'primary-purple': '#7C3AED',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(37, 99, 235, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(124, 58, 237, 0.5)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+
+    <style>
+        /* Custom Glassmorphism — matches hero / footer blue–violet system */
+        .glass {
+            background: linear-gradient(155deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.04) 40%,
+                    rgba(99, 102, 241, 0.07) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.08) inset, 0 16px 40px -16px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .glow-button:hover::before {
+            left: 100%;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+
+            66% {
+                transform: translateY(5px) rotate(1deg);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Glow effect */
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .glow-effect-purple {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Hero: sharp gradient on "100%" — glow sits behind, not on text */
+        .hero-100-wrap {
+            position: relative;
+            display: inline-block;
+            padding: 0 0.02em;
+        }
+
+        .hero-100-glow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1.35em;
+            height: 1.1em;
+            min-width: 120%;
+            min-height: 140%;
+            background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.5) 0%, rgba(59, 130, 246, 0.35) 42%, transparent 68%);
+            filter: blur(14px);
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 0.25em;
+        }
+
+        .hero-100-text {
+            position: relative;
+            z-index: 0;
+            background: linear-gradient(105deg, #3b82f6 0%, #6366f1 40%, #7c3aed 75%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        /* Premium enhancements (legacy sections) */
+        .gradient-glow {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-premium:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 30px rgba(37, 99, 235, 0.3);
+            transform: scale(1.02);
+        }
+
+        .noise-overlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+            pointer-events: none;
+        }
+
+        .upload-icon-animate {
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .border-dash-animate {
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+            background-size: 50px 50px;
+            animation: borderDash 3s linear infinite;
+        }
+
+        @keyframes borderDash {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            border-radius: 4px;
+        }
+
+        @keyframes orb-drift {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(18px, -14px) scale(1.06);
+            }
+        }
+
+        .orb-drift {
+            animation: orb-drift 16s ease-in-out infinite;
+        }
+
+        #navbar.scrolled {
+            background: rgba(10, 11, 20, 0.94);
+            border-bottom-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card-featured {
+            box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.55), 0 24px 48px rgba(37, 99, 235, 0.22);
+        }
+
+        #uploadArea.dragover {
+            border-color: rgba(147, 197, 253, 0.55) !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.2), 0 20px 40px -12px rgba(37, 99, 235, 0.25);
+        }
+
+        .hero-upload-card {
+            transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .hero-upload-card:hover {
+            transform: scale(1.01);
+            border-color: rgba(255, 255, 255, 0.32);
+            box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.15), 0 24px 48px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-cta-primary {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 4px 20px rgba(37, 99, 235, 0.45),
+                0 14px 40px rgba(124, 58, 237, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero-cta-primary:hover {
+            transform: scale(1.05);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.14),
+                0 8px 28px rgba(37, 99, 235, 0.55),
+                0 22px 56px rgba(124, 58, 237, 0.45);
+        }
+
+        /* Shared glossy glass (hero + sections) */
+        .surface-glass {
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.12) 0%,
+                    rgba(255, 255, 255, 0.05) 45%,
+                    rgba(124, 58, 237, 0.08) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow:
+                0 0 0 1px rgba(59, 130, 246, 0.12) inset,
+                0 24px 48px -12px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Subtle hover on primary actions (conversion polish) */
+        .polish-btn {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .polish-btn:hover {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .polish-btn:active {
+            transform: translateY(0) scale(1.01);
+        }
+    </style>
+
+</head>
+
+<body data-page="sub"
+    class="min-h-screen bg-[#0a0b14] text-white font-inter overflow-x-hidden antialiased selection:bg-purple-500/40 selection:text-white">
+
+    <!-- Skip Navigation -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-black focus:border-2 focus:border-primary-blue focus:px-6 focus:py-3 focus:rounded-full focus:font-bold focus:shadow-2xl transition-all">
+        Skip to main content
+    </a>
+    <!-- Atmospheric layer (must stay behind .page-content so footer is visible) -->
+    <div class="page-atmosphere pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0"></div>
+        <!-- Premium Grid overlay -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_60%,transparent_100%)] opacity-80">
+        </div>
+        <div
+            class="absolute top-[20%] -left-32 h-[min(32rem,85vw)] w-[min(32rem,85vw)] rounded-full bg-blue-600/20 blur-[120px]">
+        </div>
+        <div
+            class="absolute top-[15%] -right-32 h-[min(28rem,80vw)] w-[min(28rem,80vw)] rounded-full bg-purple-600/20 blur-[120px]">
+        </div>
+        <div
+            class="absolute bottom-0 left-1/2 h-[min(24rem,70vw)] w-[min(24rem,70vw)] -translate-x-1/2 translate-y-1/3 rounded-full bg-violet-700/15 blur-[100px]">
+        </div>
+    </div>
+
+    <div class="page-content relative z-[1]">
+        <!-- Header & Navigation -->
+        <header>
+            <nav id="navbar" role="navigation" aria-label="Main Navigation"
+                class="fixed top-0 w-full z-50 border-b border-white/10 bg-[#0a0b14]/85 backdrop-blur-md transition-all duration-300">
+                <div class="container mx-auto px-4 sm:px-6 py-4">
+                    <div class="flex justify-between items-center gap-4">
+                        <a href="#" class="flex shrink-0 items-center">
+                            <img src="../media/hundredform_logo.png" alt="HundredForm" width="200" height="100"
+                                class="h-8 w-auto max-w-[min(100%,200px)] object-contain object-left sm:h-9 md:h-10"
+                                decoding="async" />
+                        </a>
+
+                        <div class="hidden md:flex items-center space-x-8">
+                            <a href="#contact-options"
+                                class="text-white/80 hover:text-white transition-colors duration-300">Contact Options</a>
+                            <a href="#contact-process"
+                                class="text-white/80 hover:text-white transition-colors duration-300">How We Help</a>
+                            <a href="#office-locations"
+                                class="text-white/80 hover:text-white transition-colors duration-300">Offices</a>
+                            <a href="#contact-faq"
+                                class="text-white/80 hover:text-white transition-colors duration-300">FAQ</a>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <button type="button" id="navCta"
+                                class="polish-btn glow-button hidden sm:inline-flex bg-gradient-to-r from-primary-blue to-primary-purple text-white px-6 sm:px-9 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:brightness-105">
+                                Analyze Resume Free
+                            </button>
+                            <button type="button" id="mobileMenuBtn"
+                                class="md:hidden p-2 rounded-xl border border-white/10 bg-white/5 text-white/90 hover:bg-white/10"
+                                aria-label="Open menu">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 mt-3 pt-3 pb-1 space-y-1">
+                        <a href="#contact-options" class="block py-2 text-white/85 hover:text-white">Contact Options</a>
+                        <a href="#contact-process" class="block py-2 text-white/85 hover:text-white">How We Help</a>
+                        <a href="#office-locations" class="block py-2 text-white/85 hover:text-white">Offices</a>
+                        <a href="#contact-faq" class="block py-2 text-white/85 hover:text-white">FAQ</a>
+                        <button type="button" id="navCtaMobile"
+                            class="polish-btn glow-button mt-2 mb-2 w-full rounded-full bg-gradient-to-r from-primary-blue to-primary-purple py-3.5 text-base font-semibold text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:brightness-105">
+                            Analyze Resume Free
+                        </button>
+                    </div>
+                </div>
+        </header>
+
+        <main id="main-content" role="main">
+
+            <!-- Hero Section -->
+            <section class="relative isolate flex min-h-screen flex-col justify-center overflow-hidden px-4 pb-20 pt-20 sm:px-6 sm:pt-24">
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-600/35 via-violet-600/25 to-transparent">
+                </div>
+                <div class="pointer-events-none absolute inset-0 overflow-hidden">
+                    <div
+                        class="absolute -left-1/4 top-1/3 h-[min(26rem,70vw)] w-[min(26rem,70vw)] rounded-full bg-blue-500/30 blur-[88px]">
+                    </div>
+                    <div
+                        class="absolute -right-1/4 top-1/4 h-[min(24rem,65vw)] w-[min(24rem,65vw)] rounded-full bg-purple-500/28 blur-[88px]">
+                    </div>
+                </div>
+
+                <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <p
+                            class="mb-4 max-w-md text-sm font-semibold uppercase tracking-[0.18em] text-sky-200/95 sm:text-base">
+                            We usually reply within 24 hours
+                        </p>
+                        <h1
+                            class="mb-5 text-4xl font-black leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+                            Contact HundredForm Support
+                        </h1>
+                        <p
+                            class="mb-10 max-w-2xl text-base font-light leading-relaxed text-white/90 sm:text-lg md:mb-11 md:text-xl">
+                            Need technical help, billing clarity, or product guidance? Our team helps job seekers,
+                            coaches, and hiring teams get fast answers and practical next steps.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+                    <div class="mt-14 flex w-full max-w-xl flex-wrap justify-center gap-5 sm:mt-16 sm:gap-6 md:gap-8">
+                        <div class="stat-item min-w-[7.5rem] rounded-xl px-6 py-5 text-center surface-glass">
+                            <div class="text-2xl font-bold tabular-nums text-white sm:text-3xl">24h</div>
+                            <div class="mt-1 text-xs font-medium text-white/75">Avg. Response</div>
+                        </div>
+                        <div class="stat-item min-w-[7.5rem] rounded-xl px-6 py-5 text-center surface-glass">
+                            <div class="text-2xl font-bold tabular-nums text-white sm:text-3xl">92%</div>
+                            <div class="mt-1 text-xs font-medium text-white/75">First-Reply Resolution</div>
+                        </div>
+                        <div class="stat-item min-w-[7.5rem] rounded-xl px-6 py-5 text-center surface-glass">
+                            <div class="text-2xl font-bold tabular-nums text-white sm:text-3xl">4.9★</div>
+                            <div class="mt-1 text-xs font-medium text-white/75">Support Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact Options -->
+            <section id="contact-options" class="relative z-10 py-28 px-4 md:py-32">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-14">
+                        <h2
+                            class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+                            Choose the Fastest Way to Reach Us
+                        </h2>
+                        <p class="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+                            Pick a support channel based on your urgency and the kind of help you need.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div
+                            class="surface-glass text-center p-7 border border-white/10 rounded-2xl hover:border-blue-400/40 transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-blue to-primary-purple flex items-center justify-center mx-auto mb-5">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Email Support</h3>
+                            <p class="text-white/70 mb-4">Get help with technical issues, billing, or general questions
+                            </p>
+                            <a href="mailto:support@hundredform.com"
+                                class="text-blue-300 font-medium hover:text-blue-200">support@hundredform.com</a>
+                        </div>
+
+                        <div
+                            class="surface-glass text-center p-7 border border-white/10 rounded-2xl hover:border-purple-400/40 transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-blue to-primary-purple flex items-center justify-center mx-auto mb-5">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Live Chat</h3>
+                            <p class="text-white/70 mb-4">Chat with our support team for immediate assistance</p>
+                            <button onclick="openChat()" class="text-purple-300 font-medium hover:text-purple-200">Start
+                                Chat</button>
+                        </div>
+
+                        <div
+                            class="surface-glass text-center p-7 border border-white/10 rounded-2xl hover:border-emerald-400/40 transition-all duration-300 hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-blue to-primary-purple flex items-center justify-center mx-auto mb-5">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Help Center</h3>
+                            <p class="text-white/70 mb-4">Find answers to common questions and detailed guides</p>
+                            <a href="#" class="text-emerald-300 font-medium hover:text-emerald-200">Visit Help Center</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="max-w-3xl mx-auto">
+                        <div class="surface-glass rounded-2xl p-8 border border-white/15">
+                            <h2 class="text-2xl font-bold text-white mb-3">Send Us a Message</h2>
+                            <p class="text-white/70 mb-6">Share details so we can route your message to the right specialist quickly.</p>
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="firstName"
+                                            class="block text-sm font-medium text-white/80 mb-2">First
+                                            Name</label>
+                                        <input type="text" id="firstName" name="firstName" required
+                                            class="w-full px-4 py-2.5 border border-white/15 bg-white/5 text-white rounded-lg placeholder:text-white/35 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label for="lastName" class="block text-sm font-medium text-white/80 mb-2">Last
+                                            Name</label>
+                                        <input type="text" id="lastName" name="lastName" required
+                                            class="w-full px-4 py-2.5 border border-white/15 bg-white/5 text-white rounded-lg placeholder:text-white/35 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-white/80 mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-2.5 border border-white/15 bg-white/5 text-white rounded-lg placeholder:text-white/35 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+
+                                <div>
+                                    <label for="subject"
+                                        class="block text-sm font-medium text-white/80 mb-2">Subject</label>
+                                    <select id="subject" name="subject" required
+                                        class="w-full px-4 py-2.5 border border-white/15 bg-[#15182a] text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Select a topic</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="billing">Billing Question</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="partnership">Partnership Inquiry</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="message"
+                                        class="block text-sm font-medium text-white/80 mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        class="w-full px-4 py-2.5 border border-white/15 bg-white/5 text-white rounded-lg placeholder:text-white/35 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        placeholder="Tell us how we can help you..."></textarea>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="mr-2">
+                                    <label for="newsletter" class="text-sm text-white/65">
+                                        I'd like to receive career tips and updates from HundredForm
+                                    </label>
+                                </div>
+
+                                <button type="submit"
+                                    class="polish-btn glow-button w-full rounded-full bg-gradient-to-r from-primary-blue to-primary-purple py-3.5 text-base font-semibold text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:brightness-105">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-process" class="relative z-10 py-28 px-4 backdrop-blur-sm md:py-32">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">How Our Contact Process Works</h2>
+                        <p class="text-lg text-white/75 max-w-2xl mx-auto">From first message to final resolution, here is what to expect.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <article class="surface-glass rounded-2xl p-7 border border-white/10">
+                            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300/90 mb-3">Step 1</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Share Your Context</h3>
+                            <p class="text-white/70 leading-relaxed">Tell us your goal, timeline, and what you already tried. Screenshots and resume snippets help us troubleshoot faster.</p>
+                        </article>
+                        <article class="surface-glass rounded-2xl p-7 border border-white/10">
+                            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/90 mb-3">Step 2</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Specialist Routing</h3>
+                            <p class="text-white/70 leading-relaxed">Your request goes directly to support, billing, or product specialists to avoid back-and-forth transfers.</p>
+                        </article>
+                        <article class="surface-glass rounded-2xl p-7 border border-white/10">
+                            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300/90 mb-3">Step 3</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Actionable Resolution</h3>
+                            <p class="text-white/70 leading-relaxed">You receive clear next steps, links, and examples so you can resolve the issue and move forward confidently.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Office Locations -->
+            <section id="office-locations" class="relative z-10 py-28 px-4 md:py-32">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Our Offices</h2>
+                        <p class="text-lg text-white/70">Find us around the world</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="surface-glass rounded-2xl border border-white/10 p-6">
+                            <h3 class="text-xl font-semibold text-white mb-4">San Francisco Headquarters</h3>
+                            <div class="space-y-3 text-white/70">
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    123 Market Street, Suite 400<br>San Francisco, CA 94105
+                                </p>
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                    +1 (415) 555-0123
+                                </p>
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Mon-Fri: 9:00 AM - 6:00 PM PST
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="surface-glass rounded-2xl border border-white/10 p-6">
+                            <h3 class="text-xl font-semibold text-white mb-4">London Office</h3>
+                            <div class="space-y-3 text-white/70">
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    1 Finsbury Avenue<br>London EC2M 2PA, UK
+                                </p>
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                    +44 20 7123 4567
+                                </p>
+                                <p class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Mon-Fri: 9:00 AM - 6:00 PM GMT
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="contact-faq" class="relative z-10 py-28 px-4 md:py-32 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto space-y-4">
+                        <div class="faq-item surface-glass rounded-2xl border border-white/10">
+                            <button onclick="toggleFAQ(1)"
+                                class="faq-question w-full px-6 py-5 text-left flex justify-between items-center hover:bg-white/5">
+                                <span class="font-medium text-white">How quickly will I receive a response?</span>
+                                <svg class="faq-icon w-5 h-5 text-white/65 transform transition-transform" id="faq-icon-1"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-1" class="faq-answer px-6 text-white/70">
+                                <div class="pb-5">
+                                We typically respond to emails within 24 hours during business days. For urgent issues,
+                                our live
+                                chat is available Monday-Friday, 9 AM - 6 PM PST.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item surface-glass rounded-2xl border border-white/10">
+                            <button onclick="toggleFAQ(2)"
+                                class="faq-question w-full px-6 py-5 text-left flex justify-between items-center hover:bg-white/5">
+                                <span class="font-medium text-white">Do you offer phone support?</span>
+                                <svg class="faq-icon w-5 h-5 text-white/65 transform transition-transform" id="faq-icon-2"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-2" class="faq-answer px-6 text-white/70">
+                                <div class="pb-5">
+                                Phone support is available for Enterprise customers. For individual users, we offer
+                                email and
+                                live chat support to ensure we can provide detailed, helpful responses.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item surface-glass rounded-2xl border border-white/10">
+                            <button onclick="toggleFAQ(3)"
+                                class="faq-question w-full px-6 py-5 text-left flex justify-between items-center hover:bg-white/5">
+                                <span class="font-medium text-white">Can I request a feature or report a bug?</span>
+                                <svg class="faq-icon w-5 h-5 text-white/65 transform transition-transform" id="faq-icon-3"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-3" class="faq-answer px-6 text-white/70">
+                                <div class="pb-5">
+                                Absolutely! We love hearing from our users. Use the contact form above and select
+                                "Feedback" as
+                                the subject. Our product team reviews all feedback regularly.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-cta" class="relative z-10 py-28 px-4 md:py-36 overflow-hidden">
+                <div class="absolute inset-0 top-1/2 -translate-y-1/2 flex justify-center pointer-events-none z-0">
+                    <div
+                        class="w-full max-w-4xl h-64 bg-gradient-to-r from-primary-blue/30 via-purple-500/20 to-pink-500/30 blur-[100px] rounded-full">
+                    </div>
+                </div>
+                <div class="container mx-auto max-w-5xl relative z-10">
+                    <div class="surface-glass rounded-[2rem] border border-white/10 p-10 sm:p-14 text-center">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-5">
+                            Need Resume Feedback Before You Apply?
+                        </h2>
+                        <p class="text-white/70 text-lg max-w-2xl mx-auto mb-9">
+                            While our team handles your support request, you can still run a free ATS check and improve your resume instantly.
+                        </p>
+                        <button type="button" id="contactCtaBtn"
+                            class="polish-btn glow-button inline-flex rounded-full bg-gradient-to-r from-primary-blue to-primary-purple px-8 py-4 text-base font-semibold text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:brightness-105">
+                            Analyze Resume Free
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+                   <!-- Footer -->
+            <footer id="site-footer"
+                class="relative z-30 mt-4 border-t border-white/10 py-14 px-4 text-white/70 backdrop-blur-md">
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-600/5 via-transparent to-purple-600/5">
+                </div>
+                <div class="container relative mx-auto max-w-6xl">
+                    <div class="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-8 mb-10">
+                        <div class="md:col-span-1">
+                            <div class="mb-4">
+                                <img src="../media/hundredform_logo.png"
+                                    alt="HundredForm — Free AI Resume Optimizer & ATS Score Checker" width="180"
+                                    height="44" class="h-7 w-auto max-w-[180px] object-contain object-left sm:h-8"
+                                    loading="lazy" decoding="async" />
+                            </div>
+                            <p class="max-w-xs text-sm leading-relaxed text-white/60">Upload your resume, get a clear
+                                score, fix
+                                what matters, and land more interviews. It's that simple.</p>
+                        </div>
+                        <div>
+                            <h4 class="mb-4 text-xs font-semibold uppercase tracking-wider text-blue-300/90">Product
+                            </h4>
+                            <ul class="space-y-2.5 text-sm">
+                                <li><a href="#contact-options"
+                                        class="text-white/70 transition-colors hover:text-white">Contact Options</a>
+                                </li>
+                                <li><a href="#contact-process"
+                                        class="text-white/70 transition-colors hover:text-white">How We Help</a>
+                                </li>
+                                <li><a href="#office-locations" class="text-white/70 transition-colors hover:text-white">Office
+                                        locations</a></li>
+                                <li><a href="#contact-faq" class="text-white/70 transition-colors hover:text-white">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="mb-4 text-xs font-semibold uppercase tracking-wider text-purple-300/90">Company
+                            </h4>
+                            <ul class="space-y-2.5 text-sm">
+                                <li><a href="/about/" class="text-white/70 transition-colors hover:text-white">About</a></li>
+                                <li><a href="/blog/" class="text-white/70 transition-colors hover:text-white">Blog</a></li>
+                                <li><a href="/careers/" class="text-white/70 transition-colors hover:text-white">Careers</a>
+                                </li>
+                                <li><a href="/contact/" class="text-white/70 transition-colors hover:text-white">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="mb-4 text-xs font-semibold uppercase tracking-wider text-white/50">Legal</h4>
+                            <ul class="space-y-2.5 text-sm">
+                                <li><a href="/privacy/" class="text-white/70 transition-colors hover:text-white">Privacy
+                                        Policy</a>
+                                </li>
+                                <li><a href="/terms/" class="text-white/70 transition-colors hover:text-white">Terms of
+                                        Service</a></li>
+                                <li><a href="/cookies/" class="text-white/70 transition-colors hover:text-white">Cookie
+                                        Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
+                        <p class="text-sm text-white/50">© <span id="currentYear"></span> HundredForm. All rights
+                            reserved.
+                        </p>
+                        <div class="flex items-center gap-6">
+                            <a href="#" class="text-white/45 transition-colors hover:text-sky-300" aria-label="Twitter">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-white/45 transition-colors hover:text-violet-300"
+                                aria-label="LinkedIn">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-white/45 transition-colors hover:text-fuchsia-300"
+                                aria-label="GitHub">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+
+
+    </div>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
+    <script src="../js/main.min.js"></script>
+    <script src="../js/scroll.min.js"></script>
+    <script src="../js/scroll-trigger-smooth.js"></script>
+    <script src="../js/gsap-animations.min.js"></script>
+    <script src="../js/tracking.min.js"></script>
+    <script>
+        document.getElementById('currentYear').innerHTML = new Date().getFullYear();
+    </script>
+
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Show success message (in production, this would send to a backend)
+            alert('Thank you for contacting us! We\'ll get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // FAQ toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            const expanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+            content.style.maxHeight = expanded ? '0px' : `${content.scrollHeight}px`;
+            icon.classList.toggle('rotate-180', !expanded);
+        }
+
+        // Open chat (placeholder function)
+        function openChat() {
+            alert('Chat feature coming soon! Please email us at support@hundredform.com for immediate assistance.');
+        }
+
+        // Contact CTAs
+        const navCta = document.getElementById('navCta');
+        const navCtaMobile = document.getElementById('navCtaMobile');
+        const contactCtaBtn = document.getElementById('contactCtaBtn');
+        [navCta, navCtaMobile, contactCtaBtn].forEach((btn) => {
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                window.location.href = '/';
+            });
+        });
+
+        // GSAP scroll reveals handled globally in ../js/gsap-animations.min.js for subpages
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!-- Navigation Bar Component -->
+<nav id="navbar" class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>HF</span>
+                </div>
+                <span class="text-xl font-bold text-gray-800">HundredForm</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">How It Works</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Success Stories</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">Pricing</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">FAQ</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <button class="btn btn-primary">
+                    Get Started Free
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden mt-4 pb-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#features" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 py-2">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 py-2">How It Works</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 py-2">Success Stories</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 py-2">Pricing</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-500 transition-colors duration-300 py-2">FAQ</a>
+                <button class="btn btn-primary w-full mt-4">
+                    Get Started Free
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            
+            // Animate hamburger menu
+            const icon = this.querySelector('svg');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            }
+        });
+        
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('svg');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            });
+        });
+    }
+});
+</script>

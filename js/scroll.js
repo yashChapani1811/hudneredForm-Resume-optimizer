@@ -1,0 +1,201 @@
+const SCROLL_CONFIG = {
+    navbarOffset: 50,
+    animationThreshold: .1,
+    parallaxSpeed: .5,
+    throttleDelay: 16,
+    debounceDelay: 100
+};
+
+function shouldDeferToGsapSmooth() {
+    try {
+        return !!(window.ScrollTrigger && window.scrollToElement)
+    } catch (t) {
+        return !1
+    }
+}
+
+function initializeScrollEffects() {
+    initializeNavbarScroll(), shouldDeferToGsapSmooth() || (initializeSmoothScroll(), initializeProgressBar(), initializeScrollToTop()), initializeParallaxEffects(), initializeScrollAnimations(), initializeLazyLoading(), console.log("Scroll effects initialized")
+}
+
+function initializeNavbarScroll() {
+    const t = document.getElementById("navbar");
+    if (!t) return;
+    let n = 0,
+        e = "down";
+    const o = Utils.throttle(function() {
+        const o = window.pageYOffset || document.documentElement.scrollTop;
+        e = o > n ? "down" : "up", o > SCROLL_CONFIG.navbarOffset ? (t.classList.add("scrolled"), t.style.transform = "down" === e && o > 200 ? "translateY(-100%)" : "translateY(0)") : (t.classList.remove("scrolled"), t.style.transform = "translateY(0)"), n = o <= 0 ? 0 : o
+    }, SCROLL_CONFIG.throttleDelay);
+    window.addEventListener("scroll", o), t.style.transition = "transform 0.3s ease, background-color 0.3s ease"
+}
+
+function initializeSmoothScroll() {
+    const t = document.querySelectorAll('a[href^="#"]');
+    t.forEach(n => {
+        n.addEventListener("click", function(n) {
+            const e = this.getAttribute("href"),
+                o = document.querySelector(e);
+            if (o) {
+                n.preventDefault();
+                const i = document.getElementById("navbar")?.offsetHeight || 0,
+                    l = o.offsetTop - i - 20;
+                window.lenis ? window.lenis.scrollTo(l) : window.scrollTo({
+                    top: l,
+                    behavior: "smooth"
+                }), history.pushState(null, null, e), t.forEach(t => t.classList.remove("active")), this.classList.add("active")
+            }
+        })
+    }), updateActiveLinkOnScroll()
+}
+
+function updateActiveLinkOnScroll() {
+    if (shouldDeferToGsapSmooth()) return;
+    const t = document.querySelectorAll("section[id]"),
+        n = document.querySelectorAll('a[href^="#"]'),
+        e = Utils.throttle(function() {
+            let e = "";
+            t.forEach(t => {
+                const n = t.offsetTop,
+                    o = (t.offsetHeight, document.getElementById("navbar")?.offsetHeight || 0);
+                window.pageYOffset >= n - o - 100 && (e = t.getAttribute("id"))
+            }), n.forEach(t => {
+                t.classList.remove("active"), t.getAttribute("href") === "#" + e && t.classList.add("active")
+            })
+        }, SCROLL_CONFIG.throttleDelay);
+    window.addEventListener("scroll", e)
+}
+
+function initializeParallaxEffects() {
+    let t = Array.from(document.querySelectorAll("[data-parallax]"));
+    if (0 === t.length) {
+        const n = document.querySelector(".hero");
+        n && (n.setAttribute("data-parallax", "true"), n.setAttribute("data-speed", "0.5")), t = Array.from(document.querySelectorAll("[data-parallax]"))
+    }
+    if (0 === t.length) return;
+    const n = Utils.throttle(function() {
+        const n = window.pageYOffset;
+        t.forEach(t => {
+            const e = t.dataset.speed || SCROLL_CONFIG.parallaxSpeed,
+                o = -n * e;
+            t.style.transform = `translateY(${o}px)`
+        })
+    }, SCROLL_CONFIG.throttleDelay);
+    window.addEventListener("scroll", n)
+}
+
+function initializeScrollAnimations() {}
+
+function addAnimationStyles() {
+    if (document.querySelector("#animation-styles")) return;
+    const t = document.createElement("style");
+    t.id = "animation-styles", t.textContent = "\n        .animated {\n            opacity: 1 !important;\n            transform: translateY(0) !important;\n        }\n        \n        .fadeInUp {\n            animation: fadeInUp 0.6s ease forwards;\n        }\n        \n        .fadeInLeft {\n            animation: fadeInLeft 0.6s ease forwards;\n        }\n        \n        .fadeInRight {\n            animation: fadeInRight 0.6s ease forwards;\n        }\n        \n        .scaleIn {\n            animation: scaleIn 0.6s ease forwards;\n        }\n        \n        @keyframes fadeInUp {\n            from {\n                opacity: 0;\n                transform: translateY(30px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        @keyframes fadeInLeft {\n            from {\n                opacity: 0;\n                transform: translateX(-30px);\n            }\n            to {\n                opacity: 1;\n                transform: translateX(0);\n            }\n        }\n        \n        @keyframes fadeInRight {\n            from {\n                opacity: 0;\n                transform: translateX(30px);\n            }\n            to {\n                opacity: 1;\n                transform: translateX(0);\n            }\n        }\n        \n        @keyframes scaleIn {\n            from {\n                opacity: 0;\n                transform: scale(0.9);\n            }\n            to {\n                opacity: 1;\n                transform: scale(1);\n            }\n        }\n        \n        .stagger-animation > * {\n            opacity: 0;\n            transform: translateY(20px);\n            transition: opacity 0.5s ease, transform 0.5s ease;\n        }\n        \n        .stagger-animation.animated > * {\n            opacity: 1;\n            transform: translateY(0);\n        }\n        \n        .stagger-animation.animated > *:nth-child(1) { transition-delay: 0.1s; }\n        .stagger-animation.animated > *:nth-child(2) { transition-delay: 0.2s; }\n        .stagger-animation.animated > *:nth-child(3) { transition-delay: 0.3s; }\n        .stagger-animation.animated > *:nth-child(4) { transition-delay: 0.4s; }\n        .stagger-animation.animated > *:nth-child(5) { transition-delay: 0.5s; }\n    ", document.head.appendChild(t)
+}
+
+function initializeProgressBar() {
+    if (document.getElementById("scroll-progress")) return;
+    const t = document.createElement("div");
+    t.id = "scroll-progress", t.style.cssText = "\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 0%;\n        height: 3px;\n        background: linear-gradient(90deg, #2563EB, #7C3AED);\n        z-index: 9999;\n        transition: width 0.1s ease;\n    ", document.body.appendChild(t);
+    const n = Utils.throttle(function() {
+        const n = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+            e = window.scrollY / n * 100;
+        t.style.width = e + "%"
+    }, SCROLL_CONFIG.throttleDelay);
+    window.addEventListener("scroll", n)
+}
+
+function initializeScrollToTop() {
+    if (document.getElementById("scroll-to-top")) return;
+    const t = document.createElement("button");
+    t.id = "scroll-to-top", t.innerHTML = '\n        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">\n            <path d="M18 15l-6-6-6 6"/>\n        </svg>\n    ', t.style.cssText = "\n        position: fixed;\n        bottom: 30px;\n        right: 30px;\n        width: 50px;\n        height: 50px;\n        background: linear-gradient(135deg, #2563EB, #7C3AED);\n        color: white;\n        border: none;\n        border-radius: 50%;\n        cursor: pointer;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        opacity: 0;\n        visibility: hidden;\n        transform: translateY(20px);\n        transition: all 0.3s ease;\n        z-index: 1000;\n        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n    ", document.body.appendChild(t);
+    const n = Utils.throttle(function() {
+        window.pageYOffset > 300 ? (t.style.opacity = "1", t.style.visibility = "visible", t.style.transform = "translateY(0)") : (t.style.opacity = "0", t.style.visibility = "hidden", t.style.transform = "translateY(20px)")
+    }, SCROLL_CONFIG.throttleDelay);
+    window.addEventListener("scroll", n), t.addEventListener("click", function() {
+        window.lenis ? window.lenis.scrollTo(0) : window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }), t.addEventListener("mouseenter", function() {
+        this.style.transform = "translateY(0) scale(1.1)"
+    }), t.addEventListener("mouseleave", function() {
+        this.style.transform = "translateY(0) scale(1)"
+    })
+}
+
+function initializeLazyLoading() {
+    const t = document.querySelectorAll("img[data-src]");
+    if (0 === t.length) return;
+    const n = new IntersectionObserver(function(t) {
+        t.forEach(t => {
+            if (t.isIntersecting) {
+                const e = t.target;
+                e.src = e.dataset.src, e.classList.remove("lazy"), n.unobserve(e), e.style.opacity = "0", e.style.transition = "opacity 0.3s ease", e.onload = function() {
+                    e.style.opacity = "1"
+                }
+            }
+        })
+    }, {
+        rootMargin: "50px 0px"
+    });
+    t.forEach(t => {
+        t.classList.add("lazy"), n.observe(t)
+    })
+}
+
+function scrollToElement(t, n = 0) {
+    const e = document.getElementById(t);
+    if (e) {
+        const t = document.getElementById("navbar")?.offsetHeight || 0,
+            o = e.offsetTop - t - n;
+        window.lenis ? window.lenis.scrollTo(o) : window.scrollTo({
+            top: o,
+            behavior: "smooth"
+        })
+    }
+}
+
+function getScrollPosition() {
+    return {
+        x: window.pageXOffset || document.documentElement.scrollLeft,
+        y: window.pageYOffset || document.documentElement.scrollTop
+    }
+}
+
+function isElementInViewport(t, n = 0) {
+    const e = t.getBoundingClientRect(),
+        o = window.innerHeight || document.documentElement.clientHeight,
+        i = window.innerWidth || document.documentElement.clientWidth,
+        l = o * n,
+        a = i * n;
+    return e.top >= -l && e.left >= -a && e.bottom <= o + l && e.right <= i + a
+}
+document.addEventListener("DOMContentLoaded", function() {
+    initializeScrollEffects()
+});
+const ScrollUtils = {
+    onScroll: function(t, n = {}) {
+        const e = !1 !== n.throttle ? Utils.throttle(t, n.delay || SCROLL_CONFIG.throttleDelay) : t;
+        return window.addEventListener("scroll", e),
+            function() {
+                window.removeEventListener("scroll", e)
+            }
+    },
+    getScrollPercentage: function() {
+        const t = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        return window.scrollY / t * 100
+    },
+    scrollToPercentage: function(t) {
+        const n = t / 100 * (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+        window.lenis ? window.lenis.scrollTo(n) : window.scrollTo({
+            top: n,
+            behavior: "smooth"
+        })
+    }
+};
+window.ScrollUtils = ScrollUtils, window.scrollToElement = scrollToElement, window.isElementInViewport = isElementInViewport, "undefined" != typeof module && module.exports && (module.exports = {
+    initializeScrollEffects: initializeScrollEffects,
+    ScrollUtils: ScrollUtils,
+    scrollToElement: scrollToElement,
+    isElementInViewport: isElementInViewport
+});
