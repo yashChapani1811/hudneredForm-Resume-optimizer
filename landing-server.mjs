@@ -74,8 +74,8 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 const OPENROUTER_UPSTREAM = 'https://openrouter.ai/api/v1/chat/completions';
 const PROXY_PATH = '/api/openrouter/v1/chat/completions';
-const CANONICAL_HOST = 'www.hunderedform.com';
-const REDIRECT_HOSTS = new Set(['hunderedform.com', 'hunderedform.com', 'www.hunderedform.com']);
+const CANONICAL_HOST = 'hunderedform.com';
+const REDIRECT_HOSTS = new Set(['www.hunderedform.com']);
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',

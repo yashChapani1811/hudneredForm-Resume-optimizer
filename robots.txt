@@ -21,4 +21,4 @@ Allow: /compare/
 
 Crawl-delay: 1
 
-Sitemap: https://www.hunderedform.com/sitemap.xml
+Sitemap: https://hunderedform.com/sitemap.xml

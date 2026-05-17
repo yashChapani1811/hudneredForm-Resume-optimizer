@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const baseUrl = 'https://www.hunderedform.com';
+const baseUrl = 'https://hunderedform.com';
 const ogImage = `${baseUrl}/media/hunderedform-og-card.png`;
 const logo = `${baseUrl}/media/hunderedform_logo.png`;
 const gaId = 'G-S0Q62HTX5L';

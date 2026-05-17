@@ -1,7 +1,7 @@
 # Hunderedform — Master SEO Implementation Guide
 
 > **Stack:** Next.js (App Router) + React  
-> **Domain:** `https://www.hunderedform.com` ← always use this, never the typo `hunderedform.com`  
+> **Domain:** `https://hunderedform.com` ← always use this, never the typo `hunderedform.com`  
 > **Last updated:** 2026-05-10  
 > **Audience:** Any developer implementing features on this codebase must read and follow this file.
 
@@ -30,7 +30,7 @@
 ## 1. Critical Domain Fix
 
 ### Problem
-The server at `hunderedform.com` (typo — extra "e") must 301-redirect to `www.hunderedform.com`.  
+The server at `hunderedform.com` (typo — extra "e") must 301-redirect to `hunderedform.com`.  
 **Both domains currently serve content. This splits SEO authority.**
 
 ### Fix in `next.config.js`
@@ -45,14 +45,14 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'hunderedform.com' }],
-        destination: 'https://www.hunderedform.com/:path*',
+        destination: 'https://hunderedform.com/:path*',
         permanent: true, // 301
       },
       // Redirect non-www → www
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'hunderedform.com' }],
-        destination: 'https://www.hunderedform.com/:path*',
+        destination: 'https://hunderedform.com/:path*',
         permanent: true,
       },
     ];
@@ -64,7 +64,7 @@ module.exports = nextConfig;
 
 ### Also fix in Google Search Console
 - Go to GSC → Settings → Change of Address
-- Set preferred domain to `www.hunderedform.com`
+- Set preferred domain to `hunderedform.com`
 - Remove `hunderedform.com` property if it exists
 
 ---
@@ -81,9 +81,9 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   // ── Base ──────────────────────────────────────────────
-  metadataBase: new URL('https://www.hunderedform.com'),
+  metadataBase: new URL('https://hunderedform.com'),
   applicationName: 'Hunderedform',
-  authors: [{ name: 'Hunderedform', url: 'https://www.hunderedform.com' }],
+  authors: [{ name: 'Hunderedform', url: 'https://hunderedform.com' }],
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
 
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
 
   // ── Canonical (set per-page, fallback here) ───────────
   alternates: {
-    canonical: 'https://www.hunderedform.com',
+    canonical: 'https://hunderedform.com',
   },
 
   // ── Robots ────────────────────────────────────────────
@@ -134,14 +134,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.hunderedform.com',
+    url: 'https://hunderedform.com',
     siteName: 'Hunderedform',
     title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Free AI-powered resume analysis trusted by 50K+ job seekers.',
     images: [
       {
-        url: 'https://www.hunderedform.com/media/hunderedform-og-card.png',
+        url: 'https://hunderedform.com/media/hunderedform-og-card.png',
         width: 1200,
         height: 630,
         alt: 'Hunderedform AI Resume Optimizer — Get your resume score and fix it',
@@ -155,7 +155,7 @@ export const metadata: Metadata = {
     title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Trusted by 50K+ job seekers.',
-    images: ['https://www.hunderedform.com/media/hunderedform-og-card.png'],
+    images: ['https://hunderedform.com/media/hunderedform-og-card.png'],
     // Add when you create the account:
     // creator: '@hunderedform',
     // site: '@hunderedform',
@@ -238,17 +238,17 @@ export const metadata: Metadata = {
   // New version leads with the user action, not the product feature. Better CTR.
 
   alternates: {
-    canonical: 'https://www.hunderedform.com/',
+    canonical: 'https://hunderedform.com/',
   },
 
   openGraph: {
     title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Free AI-powered resume analysis trusted by 50K+ job seekers.',
-    url: 'https://www.hunderedform.com/',
+    url: 'https://hunderedform.com/',
     images: [
       {
-        url: 'https://www.hunderedform.com/media/hunderedform-og-card.png',
+        url: 'https://hunderedform.com/media/hunderedform-og-card.png',
         width: 1200,
         height: 630,
         alt: 'Hunderedform — Free ATS Resume Checker and AI Resume Optimizer',
@@ -283,13 +283,13 @@ export const metadata: Metadata = {
   title: 'Free ATS Score Checker — Check Your Resume Score Instantly',
   description:
     'Check your resume\'s ATS score for free. See if hiring software will reject your resume before a human ever reads it. Get a score out of 100 in under 3 seconds.',
-  alternates: { canonical: 'https://www.hunderedform.com/ats-score-checker' },
+  alternates: { canonical: 'https://hunderedform.com/ats-score-checker' },
   openGraph: {
     title: 'Free ATS Score Checker — Check Your Resume Score Instantly',
     description:
       'Get your resume\'s ATS compatibility score for free. Instant results, no signup required.',
-    url: 'https://www.hunderedform.com/ats-score-checker',
-    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://hunderedform.com/ats-score-checker',
+    images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 
@@ -312,13 +312,13 @@ export const metadata: Metadata = {
   title: 'Free Resume Analyzer — AI-Powered Resume Review',
   description:
     'Get a detailed AI analysis of your resume in seconds. We check ATS compatibility, keyword gaps, weak bullet points, and formatting issues — then show you exactly how to fix each one.',
-  alternates: { canonical: 'https://www.hunderedform.com/resume-analyzer' },
+  alternates: { canonical: 'https://hunderedform.com/resume-analyzer' },
   openGraph: {
     title: 'Free Resume Analyzer — AI-Powered Resume Review',
     description:
       'Upload your resume. Get a full AI analysis — ATS score, keyword gaps, and fix suggestions — in under 3 seconds.',
-    url: 'https://www.hunderedform.com/resume-analyzer',
-    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://hunderedform.com/resume-analyzer',
+    images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 
@@ -335,13 +335,13 @@ export const metadata: Metadata = {
   title: 'AI Resume Optimizer — Fix Keywords & Beat ATS Filters Free',
   description:
     'Our AI compares your resume to the job description and shows you missing keywords, weak bullet points, and formatting issues — then helps you fix each one for free.',
-  alternates: { canonical: 'https://www.hunderedform.com/resume-optimizer' },
+  alternates: { canonical: 'https://hunderedform.com/resume-optimizer' },
   openGraph: {
     title: 'AI Resume Optimizer — Fix Keywords & Beat ATS Filters Free',
     description:
       'Paste the job description. We find the missing keywords and show you exactly how to add them to your resume.',
-    url: 'https://www.hunderedform.com/resume-optimizer',
-    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://hunderedform.com/resume-optimizer',
+    images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -355,12 +355,12 @@ export const metadata: Metadata = {
   title: 'Free Resume Checker — Instant ATS & AI Feedback',
   description:
     'Check your resume for free. Our AI scores your resume out of 100, finds missing keywords, and rewrites weak bullet points. No signup needed to get started.',
-  alternates: { canonical: 'https://www.hunderedform.com/free-resume-checker' },
+  alternates: { canonical: 'https://hunderedform.com/free-resume-checker' },
   openGraph: {
     title: 'Free Resume Checker — Instant ATS & AI Feedback',
     description: 'Get a free resume score, keyword gap analysis, and fix suggestions in seconds.',
-    url: 'https://www.hunderedform.com/free-resume-checker',
-    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://hunderedform.com/free-resume-checker',
+    images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -374,12 +374,12 @@ export const metadata: Metadata = {
   title: 'Pricing — Free & Pro Plans | Hunderedform',
   description:
     'Hunderedform is free forever for one resume review per month. Upgrade to Pro at $19/mo for unlimited reviews, full ATS checks, keyword matching, and all templates.',
-  alternates: { canonical: 'https://www.hunderedform.com/pricing' },
+  alternates: { canonical: 'https://hunderedform.com/pricing' },
   openGraph: {
     title: 'Hunderedform Pricing — Free Resume Checker Plans',
     description: 'Start free. Upgrade only if you need more. No tricks, no hidden costs.',
-    url: 'https://www.hunderedform.com/pricing',
-    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://hunderedform.com/pricing',
+    images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -426,12 +426,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: page.title,
     description: page.desc,
-    alternates: { canonical: `https://www.hunderedform.com/compare/${page.slug}` },
+    alternates: { canonical: `https://hunderedform.com/compare/${page.slug}` },
     openGraph: {
       title: page.title,
       description: page.desc,
-      url: `https://www.hunderedform.com/compare/${page.slug}`,
-      images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
+      url: `https://hunderedform.com/compare/${page.slug}`,
+      images: [{ url: 'https://hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
     },
   };
 }
@@ -453,18 +453,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: post.title, // template adds "| Hunderedform" automatically
     description: post.excerpt, // max 155 chars
-    alternates: { canonical: `https://www.hunderedform.com/blog/${post.slug}` },
+    alternates: { canonical: `https://hunderedform.com/blog/${post.slug}` },
     openGraph: {
       type: 'article',
       title: post.title,
       description: post.excerpt,
-      url: `https://www.hunderedform.com/blog/${post.slug}`,
+      url: `https://hunderedform.com/blog/${post.slug}`,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
-      authors: ['https://www.hunderedform.com/about'],
+      authors: ['https://hunderedform.com/about'],
       images: [
         {
-          url: post.ogImage || 'https://www.hunderedform.com/media/hunderedform-og-card.png',
+          url: post.ogImage || 'https://hunderedform.com/media/hunderedform-og-card.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -510,8 +510,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Hunderedform',
-  url: 'https://www.hunderedform.com',
-  logo: 'https://www.hunderedform.com/media/hunderedform_logo.png',
+  url: 'https://hunderedform.com',
+  logo: 'https://hunderedform.com/media/hunderedform_logo.png',
   description:
     'Hunderedform is a free AI-powered resume optimizer and ATS score checker trusted by 50,000+ job seekers worldwide.',
   sameAs: [
@@ -541,7 +541,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Hunderedform ATS Resume Checker',
-  url: 'https://www.hunderedform.com/resume-analyzer',
+  url: 'https://hunderedform.com/resume-analyzer',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requires JavaScript',
@@ -572,7 +572,7 @@ const webAppSchema = {
   creator: {
     '@type': 'Organization',
     name: 'Hunderedform',
-    url: 'https://www.hunderedform.com',
+    url: 'https://hunderedform.com',
   },
 };
 
@@ -664,16 +664,16 @@ function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
 
 // Usage on a blog post:
 <JsonLd data={breadcrumbSchema([
-  { name: 'Home', url: 'https://www.hunderedform.com' },
-  { name: 'Blog', url: 'https://www.hunderedform.com/blog' },
-  { name: post.title, url: `https://www.hunderedform.com/blog/${post.slug}` },
+  { name: 'Home', url: 'https://hunderedform.com' },
+  { name: 'Blog', url: 'https://hunderedform.com/blog' },
+  { name: post.title, url: `https://hunderedform.com/blog/${post.slug}` },
 ])} />
 
 // Usage on a compare page:
 <JsonLd data={breadcrumbSchema([
-  { name: 'Home', url: 'https://www.hunderedform.com' },
-  { name: 'Compare', url: 'https://www.hunderedform.com/compare' },
-  { name: `Hunderedform vs ${competitor}`, url: `https://www.hunderedform.com/compare/${slug}` },
+  { name: 'Home', url: 'https://hunderedform.com' },
+  { name: 'Compare', url: 'https://hunderedform.com/compare' },
+  { name: `Hunderedform vs ${competitor}`, url: `https://hunderedform.com/compare/${slug}` },
 ])} />
 ```
 
@@ -687,27 +687,27 @@ const blogPostSchema = {
   '@type': 'BlogPosting',
   headline: post.title,
   description: post.excerpt,
-  image: post.ogImage || 'https://www.hunderedform.com/media/hunderedform-og-card.png',
+  image: post.ogImage || 'https://hunderedform.com/media/hunderedform-og-card.png',
   datePublished: post.publishedAt,   // ISO 8601: '2026-05-10T00:00:00Z'
   dateModified: post.updatedAt,
   author: {
     '@type': 'Organization',
     name: 'Hunderedform',
-    url: 'https://www.hunderedform.com',
+    url: 'https://hunderedform.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Hunderedform',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.hunderedform.com/media/hunderedform_logo.png',
+      url: 'https://hunderedform.com/media/hunderedform_logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `https://www.hunderedform.com/blog/${post.slug}`,
+    '@id': `https://hunderedform.com/blog/${post.slug}`,
   },
-  url: `https://www.hunderedform.com/blog/${post.slug}`,
+  url: `https://hunderedform.com/blog/${post.slug}`,
   keywords: post.tags?.join(', '),
 };
 
@@ -740,7 +740,7 @@ Allow: /compare/
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://www.hunderedform.com/sitemap.xml
+Sitemap: https://hunderedform.com/sitemap.xml
 ```
 
 ---
@@ -758,7 +758,7 @@ import { MetadataRoute } from 'next';
 // import { getAllPosts } from '@/lib/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.hunderedform.com';
+  const baseUrl = 'https://hunderedform.com';
   const now = new Date().toISOString();
 
   // Static pages
@@ -1071,16 +1071,16 @@ Start with English. Add regional variants as you create them.
 // app/layout.tsx — inside metadata alternates
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://www.hunderedform.com',
+    canonical: 'https://hunderedform.com',
     languages: {
-      'en': 'https://www.hunderedform.com',
-      'en-US': 'https://www.hunderedform.com',
-      'en-IN': 'https://www.hunderedform.com',   // India is your largest market
-      'en-GB': 'https://www.hunderedform.com',   // UK growing
+      'en': 'https://hunderedform.com',
+      'en-US': 'https://hunderedform.com',
+      'en-IN': 'https://hunderedform.com',   // India is your largest market
+      'en-GB': 'https://hunderedform.com',   // UK growing
       // When you add regional pages:
-      // 'en-IN': 'https://www.hunderedform.com/in',
-      // 'en-GB': 'https://www.hunderedform.com/uk',
-      'x-default': 'https://www.hunderedform.com',
+      // 'en-IN': 'https://hunderedform.com/in',
+      // 'en-GB': 'https://hunderedform.com/uk',
+      'x-default': 'https://hunderedform.com',
     },
   },
 };
