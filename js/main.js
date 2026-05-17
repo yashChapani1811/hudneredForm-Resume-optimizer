@@ -1,5 +1,5 @@
 function initializeApp() {
-    initializeNavigation(), initializeUpload(), bindLandingPageControls(), initializeFAQ(), initializeAnimations(), initializeFormValidation(), initializeMobileMenu(), console.log("HundredForm Landing Page initialized successfully")
+    initializeNavigation(), initializeUpload(), bindLandingPageControls(), initializeFAQ(), initializeAnimations(), initializeFormValidation(), initializeMobileMenu(), console.log("Hunderedform Landing Page initialized successfully")
 }
 
 function initializeNavigation() {

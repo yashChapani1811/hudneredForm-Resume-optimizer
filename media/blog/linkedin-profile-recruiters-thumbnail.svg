@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LinkedIn profile recruiters thumbnail</title>
+  <desc id="desc">A professional profile card optimized for recruiter search.</desc>
+  <rect width="1200" height="630" fill="#07111F"/>
+  <rect x="134" y="106" width="932" height="418" rx="34" fill="white" opacity=".08" stroke="white" stroke-opacity=".18"/>
+  <rect x="192" y="164" width="290" height="302" rx="24" fill="#F8FAFC"/>
+  <circle cx="337" cy="256" r="54" fill="#60A5FA"/>
+  <rect x="244" y="346" width="186" height="18" rx="9" fill="#111827"/>
+  <rect x="258" y="386" width="158" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="590" y="178" width="340" height="48" rx="24" fill="#2563EB"/>
+  <text x="625" y="211" fill="white" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">Recruiter-ready</text>
+  <text x="590" y="310" fill="white" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="900">Optimize your</text>
+  <text x="590" y="372" fill="#93C5FD" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="900">LinkedIn profile</text>
+  <text x="594" y="438" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600">Turn searches into recruiter messages.</text>
+</svg>

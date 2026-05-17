@@ -1,7 +1,7 @@
-# HundredForm — Master SEO Implementation Guide
+# Hunderedform — Master SEO Implementation Guide
 
 > **Stack:** Next.js (App Router) + React  
-> **Domain:** `https://www.hundredform.com` ← always use this, never the typo `hunderedform.com`  
+> **Domain:** `https://www.hunderedform.com` ← always use this, never the typo `hunderedform.com`  
 > **Last updated:** 2026-05-10  
 > **Audience:** Any developer implementing features on this codebase must read and follow this file.
 
@@ -30,7 +30,7 @@
 ## 1. Critical Domain Fix
 
 ### Problem
-The server at `hunderedform.com` (typo — extra "e") must 301-redirect to `www.hundredform.com`.  
+The server at `hunderedform.com` (typo — extra "e") must 301-redirect to `www.hunderedform.com`.  
 **Both domains currently serve content. This splits SEO authority.**
 
 ### Fix in `next.config.js`
@@ -45,14 +45,14 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'hunderedform.com' }],
-        destination: 'https://www.hundredform.com/:path*',
+        destination: 'https://www.hunderedform.com/:path*',
         permanent: true, // 301
       },
       // Redirect non-www → www
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'hundredform.com' }],
-        destination: 'https://www.hundredform.com/:path*',
+        has: [{ type: 'host', value: 'hunderedform.com' }],
+        destination: 'https://www.hunderedform.com/:path*',
         permanent: true,
       },
     ];
@@ -64,7 +64,7 @@ module.exports = nextConfig;
 
 ### Also fix in Google Search Console
 - Go to GSC → Settings → Change of Address
-- Set preferred domain to `www.hundredform.com`
+- Set preferred domain to `www.hunderedform.com`
 - Remove `hunderedform.com` property if it exists
 
 ---
@@ -81,18 +81,18 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   // ── Base ──────────────────────────────────────────────
-  metadataBase: new URL('https://www.hundredform.com'),
-  applicationName: 'HundredForm',
-  authors: [{ name: 'HundredForm', url: 'https://www.hundredform.com' }],
+  metadataBase: new URL('https://www.hunderedform.com'),
+  applicationName: 'Hunderedform',
+  authors: [{ name: 'Hunderedform', url: 'https://www.hunderedform.com' }],
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
 
   // ── Default title (overridden per page) ───────────────
   title: {
-    default: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
-    template: '%s | HundredForm',
+    default: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
+    template: '%s | Hunderedform',
     // Usage: page exports title: 'ATS Score Checker'
-    // Result: 'ATS Score Checker | HundredForm'
+    // Result: 'ATS Score Checker | Hunderedform'
   },
 
   // ── Default description (overridden per page) ─────────
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
 
   // ── Canonical (set per-page, fallback here) ───────────
   alternates: {
-    canonical: 'https://www.hundredform.com',
+    canonical: 'https://www.hunderedform.com',
   },
 
   // ── Robots ────────────────────────────────────────────
@@ -134,17 +134,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.hundredform.com',
-    siteName: 'HundredForm',
-    title: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
+    url: 'https://www.hunderedform.com',
+    siteName: 'Hunderedform',
+    title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Free AI-powered resume analysis trusted by 50K+ job seekers.',
     images: [
       {
-        url: 'https://www.hundredform.com/media/hundredform-og-card.png',
+        url: 'https://www.hunderedform.com/media/hunderedform-og-card.png',
         width: 1200,
         height: 630,
-        alt: 'HundredForm AI Resume Optimizer — Get your resume score and fix it',
+        alt: 'Hunderedform AI Resume Optimizer — Get your resume score and fix it',
       },
     ],
   },
@@ -152,13 +152,13 @@ export const metadata: Metadata = {
   // ── Twitter / X Card ──────────────────────────────────
   twitter: {
     card: 'summary_large_image',
-    title: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
+    title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Trusted by 50K+ job seekers.',
-    images: ['https://www.hundredform.com/media/hundredform-og-card.png'],
+    images: ['https://www.hunderedform.com/media/hunderedform-og-card.png'],
     // Add when you create the account:
-    // creator: '@hundredform',
-    // site: '@hundredform',
+    // creator: '@hunderedform',
+    // site: '@hunderedform',
   },
 
   // ── Verification (add when connected) ─────────────────
@@ -183,7 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="geo.placename" content="India" />
         <meta name="ICBM" content="20.5937, 78.9629" />
         {/* Publisher */}
-        <meta name="publisher" content="HundredForm" />
+        <meta name="publisher" content="Hunderedform" />
         <meta name="DC.language" content="en" />
       </head>
       <body>
@@ -228,8 +228,8 @@ Always override `title`, `description`, `alternates.canonical`, and `openGraph`.
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
-  // ↑ CHANGED: was "HundredForm — Free AI Resume Optimizer & ATS Score Checker | Get More Interviews"
+  title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
+  // ↑ CHANGED: was "Hunderedform — Free AI Resume Optimizer & ATS Score Checker | Get More Interviews"
   // Primary keyword "ATS Resume Checker" moved to front — Google weights first words more.
 
   description:
@@ -238,26 +238,26 @@ export const metadata: Metadata = {
   // New version leads with the user action, not the product feature. Better CTR.
 
   alternates: {
-    canonical: 'https://www.hundredform.com/',
+    canonical: 'https://www.hunderedform.com/',
   },
 
   openGraph: {
-    title: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
+    title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Free AI-powered resume analysis trusted by 50K+ job seekers.',
-    url: 'https://www.hundredform.com/',
+    url: 'https://www.hunderedform.com/',
     images: [
       {
-        url: 'https://www.hundredform.com/media/hundredform-og-card.png',
+        url: 'https://www.hunderedform.com/media/hunderedform-og-card.png',
         width: 1200,
         height: 630,
-        alt: 'HundredForm — Free ATS Resume Checker and AI Resume Optimizer',
+        alt: 'Hunderedform — Free ATS Resume Checker and AI Resume Optimizer',
       },
     ],
   },
 
   twitter: {
-    title: 'Free ATS Resume Checker & AI Optimizer — HundredForm',
+    title: 'Free ATS Resume Checker & AI Optimizer — Hunderedform',
     description:
       'Upload your resume, get your ATS score, fix what\'s weak, and land more interviews. Trusted by 50K+ job seekers.',
   },
@@ -283,13 +283,13 @@ export const metadata: Metadata = {
   title: 'Free ATS Score Checker — Check Your Resume Score Instantly',
   description:
     'Check your resume\'s ATS score for free. See if hiring software will reject your resume before a human ever reads it. Get a score out of 100 in under 3 seconds.',
-  alternates: { canonical: 'https://www.hundredform.com/ats-score-checker' },
+  alternates: { canonical: 'https://www.hunderedform.com/ats-score-checker' },
   openGraph: {
     title: 'Free ATS Score Checker — Check Your Resume Score Instantly',
     description:
       'Get your resume\'s ATS compatibility score for free. Instant results, no signup required.',
-    url: 'https://www.hundredform.com/ats-score-checker',
-    images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://www.hunderedform.com/ats-score-checker',
+    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 
@@ -312,13 +312,13 @@ export const metadata: Metadata = {
   title: 'Free Resume Analyzer — AI-Powered Resume Review',
   description:
     'Get a detailed AI analysis of your resume in seconds. We check ATS compatibility, keyword gaps, weak bullet points, and formatting issues — then show you exactly how to fix each one.',
-  alternates: { canonical: 'https://www.hundredform.com/resume-analyzer' },
+  alternates: { canonical: 'https://www.hunderedform.com/resume-analyzer' },
   openGraph: {
     title: 'Free Resume Analyzer — AI-Powered Resume Review',
     description:
       'Upload your resume. Get a full AI analysis — ATS score, keyword gaps, and fix suggestions — in under 3 seconds.',
-    url: 'https://www.hundredform.com/resume-analyzer',
-    images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://www.hunderedform.com/resume-analyzer',
+    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 
@@ -335,13 +335,13 @@ export const metadata: Metadata = {
   title: 'AI Resume Optimizer — Fix Keywords & Beat ATS Filters Free',
   description:
     'Our AI compares your resume to the job description and shows you missing keywords, weak bullet points, and formatting issues — then helps you fix each one for free.',
-  alternates: { canonical: 'https://www.hundredform.com/resume-optimizer' },
+  alternates: { canonical: 'https://www.hunderedform.com/resume-optimizer' },
   openGraph: {
     title: 'AI Resume Optimizer — Fix Keywords & Beat ATS Filters Free',
     description:
       'Paste the job description. We find the missing keywords and show you exactly how to add them to your resume.',
-    url: 'https://www.hundredform.com/resume-optimizer',
-    images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://www.hunderedform.com/resume-optimizer',
+    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -355,12 +355,12 @@ export const metadata: Metadata = {
   title: 'Free Resume Checker — Instant ATS & AI Feedback',
   description:
     'Check your resume for free. Our AI scores your resume out of 100, finds missing keywords, and rewrites weak bullet points. No signup needed to get started.',
-  alternates: { canonical: 'https://www.hundredform.com/free-resume-checker' },
+  alternates: { canonical: 'https://www.hunderedform.com/free-resume-checker' },
   openGraph: {
     title: 'Free Resume Checker — Instant ATS & AI Feedback',
     description: 'Get a free resume score, keyword gap analysis, and fix suggestions in seconds.',
-    url: 'https://www.hundredform.com/free-resume-checker',
-    images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://www.hunderedform.com/free-resume-checker',
+    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -371,15 +371,15 @@ export const metadata: Metadata = {
 
 ```tsx
 export const metadata: Metadata = {
-  title: 'Pricing — Free & Pro Plans | HundredForm',
+  title: 'Pricing — Free & Pro Plans | Hunderedform',
   description:
-    'HundredForm is free forever for one resume review per month. Upgrade to Pro at $19/mo for unlimited reviews, full ATS checks, keyword matching, and all templates.',
-  alternates: { canonical: 'https://www.hundredform.com/pricing' },
+    'Hunderedform is free forever for one resume review per month. Upgrade to Pro at $19/mo for unlimited reviews, full ATS checks, keyword matching, and all templates.',
+  alternates: { canonical: 'https://www.hunderedform.com/pricing' },
   openGraph: {
-    title: 'HundredForm Pricing — Free Resume Checker Plans',
+    title: 'Hunderedform Pricing — Free Resume Checker Plans',
     description: 'Start free. Upgrade only if you need more. No tricks, no hidden costs.',
-    url: 'https://www.hundredform.com/pricing',
-    images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+    url: 'https://www.hunderedform.com/pricing',
+    images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
   },
 };
 ```
@@ -397,41 +397,41 @@ const competitorData: Record<string, { name: string; slug: string; title: string
     name: 'ResumeWorded',
     slug: 'resumeworded-alternative',
     title: 'Best ResumeWorded Alternative — Free ATS Checker 2026',
-    desc: 'Looking for a free ResumeWorded alternative? HundredForm gives you ATS scoring, keyword matching, and bullet point rewrites — all free, no credit card needed.',
+    desc: 'Looking for a free ResumeWorded alternative? Hunderedform gives you ATS scoring, keyword matching, and bullet point rewrites — all free, no credit card needed.',
   },
   'jobscan-alternative': {
     name: 'Jobscan',
     slug: 'jobscan-alternative',
     title: 'Best Jobscan Alternative — Free ATS Resume Checker',
-    desc: 'Looking for a free Jobscan alternative? HundredForm offers full ATS score checking, keyword matching, and resume optimization — completely free to start.',
+    desc: 'Looking for a free Jobscan alternative? Hunderedform offers full ATS score checking, keyword matching, and resume optimization — completely free to start.',
   },
   'zety-alternative': {
     name: 'Zety',
     slug: 'zety-alternative',
     title: 'Best Zety Alternative — Free Resume Checker & Optimizer',
-    desc: 'Looking for a free Zety alternative? HundredForm checks your resume for ATS compatibility, finds keyword gaps, and helps you fix them — no subscription needed.',
+    desc: 'Looking for a free Zety alternative? Hunderedform checks your resume for ATS compatibility, finds keyword gaps, and helps you fix them — no subscription needed.',
   },
   'resume-io-alternative': {
     name: 'Resume.io',
     slug: 'resume-io-alternative',
     title: 'Best Resume.io Alternative — Free ATS Resume Analyzer',
-    desc: 'Looking for a free Resume.io alternative? HundredForm analyzes your resume, gives you an ATS score, and helps you improve it in minutes.',
+    desc: 'Looking for a free Resume.io alternative? Hunderedform analyzes your resume, gives you an ATS score, and helps you improve it in minutes.',
   },
 };
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const page = competitorData[params.slug];
-  if (!page) return { title: 'Compare | HundredForm' };
+  if (!page) return { title: 'Compare | Hunderedform' };
 
   return {
     title: page.title,
     description: page.desc,
-    alternates: { canonical: `https://www.hundredform.com/compare/${page.slug}` },
+    alternates: { canonical: `https://www.hunderedform.com/compare/${page.slug}` },
     openGraph: {
       title: page.title,
       description: page.desc,
-      url: `https://www.hundredform.com/compare/${page.slug}`,
-      images: [{ url: 'https://www.hundredform.com/media/hundredform-og-card.png', width: 1200, height: 630 }],
+      url: `https://www.hunderedform.com/compare/${page.slug}`,
+      images: [{ url: 'https://www.hunderedform.com/media/hunderedform-og-card.png', width: 1200, height: 630 }],
     },
   };
 }
@@ -451,20 +451,20 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = await getPostBySlug(params.slug); // your CMS/MDX fetch function
 
   return {
-    title: post.title, // template adds "| HundredForm" automatically
+    title: post.title, // template adds "| Hunderedform" automatically
     description: post.excerpt, // max 155 chars
-    alternates: { canonical: `https://www.hundredform.com/blog/${post.slug}` },
+    alternates: { canonical: `https://www.hunderedform.com/blog/${post.slug}` },
     openGraph: {
       type: 'article',
       title: post.title,
       description: post.excerpt,
-      url: `https://www.hundredform.com/blog/${post.slug}`,
+      url: `https://www.hunderedform.com/blog/${post.slug}`,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
-      authors: ['https://www.hundredform.com/about'],
+      authors: ['https://www.hunderedform.com/about'],
       images: [
         {
-          url: post.ogImage || 'https://www.hundredform.com/media/hundredform-og-card.png',
+          url: post.ogImage || 'https://www.hunderedform.com/media/hunderedform-og-card.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -509,16 +509,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'HundredForm',
-  url: 'https://www.hundredform.com',
-  logo: 'https://www.hundredform.com/media/hundredform_logo.png',
+  name: 'Hunderedform',
+  url: 'https://www.hunderedform.com',
+  logo: 'https://www.hunderedform.com/media/hunderedform_logo.png',
   description:
-    'HundredForm is a free AI-powered resume optimizer and ATS score checker trusted by 50,000+ job seekers worldwide.',
+    'Hunderedform is a free AI-powered resume optimizer and ATS score checker trusted by 50,000+ job seekers worldwide.',
   sameAs: [
     // Add your social profiles when created:
-    // 'https://twitter.com/hundredform',
-    // 'https://www.linkedin.com/company/hundredform',
-    // 'https://www.instagram.com/hundredform',
+    // 'https://twitter.com/hunderedform',
+    // 'https://www.linkedin.com/company/hunderedform',
+    // 'https://www.instagram.com/hunderedform',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -540,8 +540,8 @@ const organizationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'HundredForm ATS Resume Checker',
-  url: 'https://www.hundredform.com/resume-analyzer',
+  name: 'Hunderedform ATS Resume Checker',
+  url: 'https://www.hunderedform.com/resume-analyzer',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requires JavaScript',
@@ -571,8 +571,8 @@ const webAppSchema = {
   ],
   creator: {
     '@type': 'Organization',
-    name: 'HundredForm',
-    url: 'https://www.hundredform.com',
+    name: 'Hunderedform',
+    url: 'https://www.hunderedform.com',
   },
 };
 
@@ -594,7 +594,7 @@ const faqSchema = {
       name: 'How accurate is the AI resume analysis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'HundredForm\'s AI is trained on thousands of resumes that actually got people hired. You can see exactly why your score changed — nothing is hidden.',
+        text: 'Hunderedform\'s AI is trained on thousands of resumes that actually got people hired. You can see exactly why your score changed — nothing is hidden.',
       },
     },
     {
@@ -607,7 +607,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What file formats does HundredForm support?',
+      name: 'What file formats does Hunderedform support?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'PDF, DOC, and DOCX — all work fine, up to 10MB. Make sure your resume is not a scanned image as we need actual text to analyze it.',
@@ -615,23 +615,23 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Is my resume data secure on HundredForm?',
+      name: 'Is my resume data secure on Hunderedform?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Everything is encrypted. HundredForm never sells or shares your data. You can delete your resume from our servers at any time.',
+        text: 'Yes. Everything is encrypted. Hunderedform never sells or shares your data. You can delete your resume from our servers at any time.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Will HundredForm guarantee I get interviews?',
+      name: 'Will Hunderedform guarantee I get interviews?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'HundredForm cannot guarantee interviews, but it makes your resume clearer, more relevant, and easier for hiring software to read — which means you will hear back from more places.',
+        text: 'Hunderedform cannot guarantee interviews, but it makes your resume clearer, more relevant, and easier for hiring software to read — which means you will hear back from more places.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does HundredForm store my resume forever?',
+      name: 'Does Hunderedform store my resume forever?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'No. Free accounts are cleaned up after 30 days of inactivity. Pro accounts keep your files as long as you want, and you can delete them anytime.',
@@ -664,16 +664,16 @@ function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
 
 // Usage on a blog post:
 <JsonLd data={breadcrumbSchema([
-  { name: 'Home', url: 'https://www.hundredform.com' },
-  { name: 'Blog', url: 'https://www.hundredform.com/blog' },
-  { name: post.title, url: `https://www.hundredform.com/blog/${post.slug}` },
+  { name: 'Home', url: 'https://www.hunderedform.com' },
+  { name: 'Blog', url: 'https://www.hunderedform.com/blog' },
+  { name: post.title, url: `https://www.hunderedform.com/blog/${post.slug}` },
 ])} />
 
 // Usage on a compare page:
 <JsonLd data={breadcrumbSchema([
-  { name: 'Home', url: 'https://www.hundredform.com' },
-  { name: 'Compare', url: 'https://www.hundredform.com/compare' },
-  { name: `HundredForm vs ${competitor}`, url: `https://www.hundredform.com/compare/${slug}` },
+  { name: 'Home', url: 'https://www.hunderedform.com' },
+  { name: 'Compare', url: 'https://www.hunderedform.com/compare' },
+  { name: `Hunderedform vs ${competitor}`, url: `https://www.hunderedform.com/compare/${slug}` },
 ])} />
 ```
 
@@ -687,27 +687,27 @@ const blogPostSchema = {
   '@type': 'BlogPosting',
   headline: post.title,
   description: post.excerpt,
-  image: post.ogImage || 'https://www.hundredform.com/media/hundredform-og-card.png',
+  image: post.ogImage || 'https://www.hunderedform.com/media/hunderedform-og-card.png',
   datePublished: post.publishedAt,   // ISO 8601: '2026-05-10T00:00:00Z'
   dateModified: post.updatedAt,
   author: {
     '@type': 'Organization',
-    name: 'HundredForm',
-    url: 'https://www.hundredform.com',
+    name: 'Hunderedform',
+    url: 'https://www.hunderedform.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'HundredForm',
+    name: 'Hunderedform',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.hundredform.com/media/hundredform_logo.png',
+      url: 'https://www.hunderedform.com/media/hunderedform_logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `https://www.hundredform.com/blog/${post.slug}`,
+    '@id': `https://www.hunderedform.com/blog/${post.slug}`,
   },
-  url: `https://www.hundredform.com/blog/${post.slug}`,
+  url: `https://www.hunderedform.com/blog/${post.slug}`,
   keywords: post.tags?.join(', '),
 };
 
@@ -740,7 +740,7 @@ Allow: /compare/
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://www.hundredform.com/sitemap.xml
+Sitemap: https://www.hunderedform.com/sitemap.xml
 ```
 
 ---
@@ -758,7 +758,7 @@ import { MetadataRoute } from 'next';
 // import { getAllPosts } from '@/lib/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.hundredform.com';
+  const baseUrl = 'https://www.hunderedform.com';
   const now = new Date().toISOString();
 
   // Static pages
@@ -876,7 +876,7 @@ slug: "how-to-make-resume-ats-friendly"
 excerpt: "Most resumes are rejected by ATS before a human ever reads them. Here's how to fix yours in 10 minutes — step by step."
 publishedAt: "2026-05-15T00:00:00Z"
 updatedAt: "2026-05-15T00:00:00Z"
-author: "HundredForm Team"
+author: "Hunderedform Team"
 tags: ["ATS", "resume tips", "job search"]
 ogImage: "/media/blog/ats-friendly-resume-guide.png"  # 1200x630px
 targetKeyword: "how to make resume ATS friendly"
@@ -902,7 +902,7 @@ Use H3 for each question — these trigger FAQ rich results.
 ...
 
 ---
-**Check your resume's ATS score for free →** [Try HundredForm](/resume-analyzer)
+**Check your resume's ATS score for free →** [Try Hunderedform](/resume-analyzer)
 ```
 
 **Blog post rules:**
@@ -924,23 +924,23 @@ Use H3 for each question — these trigger FAQ rich results.
 import Image from 'next/image';
 
 <Image
-  src="/media/hundredform_logo.png"
-  alt="HundredForm free ATS resume checker logo"
+  src="/media/hunderedform_logo.png"
+  alt="Hunderedform free ATS resume checker logo"
   width={180}
   height={40}
   priority  // add for above-the-fold images only
 />
 
 // ❌ WRONG
-<img src="/media/hundredform_logo.png" alt="logo" />
+<img src="/media/hunderedform_logo.png" alt="logo" />
 ```
 
 **Alt text rules:**
 | Image | Alt Text |
 |---|---|
-| Logo | `HundredForm free ATS resume checker logo` |
-| OG Card | `HundredForm AI Resume Optimizer — Get your resume score and fix it` |
-| ATS score screenshot | `ATS resume score out of 100 shown in HundredForm dashboard` |
+| Logo | `Hunderedform free ATS resume checker logo` |
+| OG Card | `Hunderedform AI Resume Optimizer — Get your resume score and fix it` |
+| ATS score screenshot | `ATS resume score out of 100 shown in Hunderedform dashboard` |
 | Feature icon | Describe what the feature does, not what the icon looks like |
 | Testimonial avatar | `[Name] — [Job Title]` |
 | Blog hero image | Include the post's target keyword |
@@ -1071,16 +1071,16 @@ Start with English. Add regional variants as you create them.
 // app/layout.tsx — inside metadata alternates
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://www.hundredform.com',
+    canonical: 'https://www.hunderedform.com',
     languages: {
-      'en': 'https://www.hundredform.com',
-      'en-US': 'https://www.hundredform.com',
-      'en-IN': 'https://www.hundredform.com',   // India is your largest market
-      'en-GB': 'https://www.hundredform.com',   // UK growing
+      'en': 'https://www.hunderedform.com',
+      'en-US': 'https://www.hunderedform.com',
+      'en-IN': 'https://www.hunderedform.com',   // India is your largest market
+      'en-GB': 'https://www.hunderedform.com',   // UK growing
       // When you add regional pages:
-      // 'en-IN': 'https://www.hundredform.com/in',
-      // 'en-GB': 'https://www.hundredform.com/uk',
-      'x-default': 'https://www.hundredform.com',
+      // 'en-IN': 'https://www.hunderedform.com/in',
+      // 'en-GB': 'https://www.hunderedform.com/uk',
+      'x-default': 'https://www.hunderedform.com',
     },
   },
 };
@@ -1099,7 +1099,7 @@ Each URL owns one primary keyword. Never target the same keyword on two pages.
 | `/ats-score-checker` | ATS score checker | check resume ATS score, ATS resume score |
 | `/resume-optimizer` | AI resume optimizer | resume keyword optimizer, resume keyword checker |
 | `/free-resume-checker` | free resume checker | resume checker online, check my resume free |
-| `/pricing` | HundredForm pricing | resume checker free vs pro |
+| `/pricing` | Hunderedform pricing | resume checker free vs pro |
 | `/resume-templates` | ATS resume templates | ATS friendly resume templates free |
 | `/compare/resumeworded-alternative` | ResumeWorded alternative | free ResumeWorded replacement |
 | `/compare/jobscan-alternative` | Jobscan alternative | free Jobscan replacement |
@@ -1159,5 +1159,5 @@ SEO Pre-Ship Checklist
 
 ---
 
-*This document is the source of truth for all SEO decisions on HundredForm.*  
+*This document is the source of truth for all SEO decisions on Hunderedform.*  
 *Update it whenever you add new pages, change URLs, or update metadata.*

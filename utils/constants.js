@@ -1,31 +1,31 @@
 /**
- * HundredForm Landing Page - Constants and Configuration
+ * Hunderedform Landing Page - Constants and Configuration
  * Centralized configuration values for the application
  */
 
 // Application Constants
 export const APP_CONFIG = {
     // App Information
-    NAME: 'HundredForm',
+    NAME: 'Hunderedform',
     TAGLINE: 'Make Your Resume 100% Perfect',
     DESCRIPTION: 'AI-powered resume optimizer that helps you create the perfect resume',
     VERSION: '1.0.0',
     
     // URLs
-    BASE_URL: 'https://hundredform.com',
-    API_URL: 'https://api.hundredform.com',
-    CDN_URL: 'https://cdn.hundredform.com',
+    BASE_URL: 'https://hunderedform.com',
+    API_URL: 'https://api.hunderedform.com',
+    CDN_URL: 'https://cdn.hunderedform.com',
     
     // Contact
-    SUPPORT_EMAIL: 'support@hundredform.com',
-    SALES_EMAIL: 'sales@hundredform.com',
+    SUPPORT_EMAIL: 'support@hunderedform.com',
+    SALES_EMAIL: 'sales@hunderedform.com',
     
     // Social Media
     SOCIAL: {
-        FACEBOOK: 'https://facebook.com/hundredform',
-        TWITTER: 'https://twitter.com/hundredform',
-        LINKEDIN: 'https://linkedin.com/company/hundredform',
-        INSTAGRAM: 'https://instagram.com/hundredform'
+        FACEBOOK: 'https://facebook.com/hunderedform',
+        TWITTER: 'https://twitter.com/hunderedform',
+        LINKEDIN: 'https://linkedin.com/company/hunderedform',
+        INSTAGRAM: 'https://instagram.com/hunderedform'
     }
 };
 
@@ -415,22 +415,22 @@ export const SUCCESS_MESSAGES = {
 // Local Storage Keys
 export const STORAGE_KEYS = {
     // User data
-    USER_TOKEN: 'hundredform_token',
-    USER_EMAIL: 'hundredform_email',
-    USER_PLAN: 'hundredform_plan',
+    USER_TOKEN: 'hunderedform_token',
+    USER_EMAIL: 'hunderedform_email',
+    USER_PLAN: 'hunderedform_plan',
     
     // App state
-    THEME: 'hundredform_theme',
-    LANGUAGE: 'hundredform_language',
-    ONBOARDING_COMPLETED: 'hundredform_onboarding_completed',
+    THEME: 'hunderedform_theme',
+    LANGUAGE: 'hunderedform_language',
+    ONBOARDING_COMPLETED: 'hunderedform_onboarding_completed',
     
     // Analytics
-    SESSION_ID: 'hundredform_session_id',
-    ANALYTICS_DATA: 'hundredform_analytics',
+    SESSION_ID: 'hunderedform_session_id',
+    ANALYTICS_DATA: 'hunderedform_analytics',
     
     // Preferences
-    NEWSLETTER_SUBSCRIBED: 'hundredform_newsletter_subscribed',
-    NOTIFICATIONS_ENABLED: 'hundredform_notifications_enabled'
+    NEWSLETTER_SUBSCRIBED: 'hunderedform_newsletter_subscribed',
+    NOTIFICATIONS_ENABLED: 'hunderedform_notifications_enabled'
 };
 
 // Default Settings
@@ -474,5 +474,5 @@ export const CONSTANTS = {
 
 // Make constants available globally for non-module usage
 if (typeof window !== 'undefined') {
-    window.HundredFormConstants = CONSTANTS;
+    window.HunderedformConstants = CONSTANTS;
 }

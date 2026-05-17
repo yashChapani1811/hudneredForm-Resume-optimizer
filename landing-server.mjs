@@ -1,5 +1,5 @@
 /**
- * HundredForm landing site + OpenRouter proxy (no npm dependencies; Node 18+).
+ * Hunderedform landing site + OpenRouter proxy (no npm dependencies; Node 18+).
  *
  * Why: index.html embeds the Angular browser build from app/browser/. Static hosts
  * return 405 for POST /api/openrouter/... This server serves the repo root and proxies that path.
@@ -74,6 +74,8 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 const OPENROUTER_UPSTREAM = 'https://openrouter.ai/api/v1/chat/completions';
 const PROXY_PATH = '/api/openrouter/v1/chat/completions';
+const CANONICAL_HOST = 'www.hunderedform.com';
+const REDIRECT_HOSTS = new Set(['hunderedform.com', 'hunderedform.com', 'www.hunderedform.com']);
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -172,7 +174,7 @@ async function handleOpenRouterProxy(req, res) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
         'HTTP-Referer': referer,
-        'X-Title': 'HundredForm Resume Optimizer',
+        'X-Title': 'Hunderedform Resume Optimizer',
       },
       body: bodyText || '{}',
     });
@@ -250,6 +252,15 @@ function sendFile(req, res, abs) {
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
+  const requestHost = String(req.headers.host || '').split(':')[0].toLowerCase();
+  if (REDIRECT_HOSTS.has(requestHost)) {
+    res.writeHead(301, {
+      Location: `https://${CANONICAL_HOST}${url.pathname}${url.search}`,
+      'Cache-Control': 'public, max-age=3600',
+    });
+    res.end();
+    return;
+  }
   if (url.pathname === PROXY_PATH || url.pathname === `${PROXY_PATH}/`) {
     void handleOpenRouterProxy(req, res);
     return;

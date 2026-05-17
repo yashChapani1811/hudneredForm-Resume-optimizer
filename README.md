@@ -1,9 +1,9 @@
-# HundredForm Resume Optimizer
+# Hunderedform Resume Optimizer
 
 This repository contains:
 
 - **Landing site** — `index.html` at the repo root (Tailwind, marketing sections, tracking scripts).
-- **Angular resume app** — source in `app/hundredForm-converter/`; production browser bundles are copied into **`app/browser/`** and loaded from the landing page (see the Angular script and stylesheet links in `index.html`).
+- **Angular resume app** — source in `app/hunderedform-converter/`; production browser bundles are copied into **`app/browser/`** and loaded from the landing page (see the Angular script and stylesheet links in `index.html`).
 
 The Angular app calls **`POST /api/openrouter/v1/chat/completions`** on the **same origin** as the page. That path must be implemented by a **Node server** (local or production). A **static-only** host returns **405 Method Not Allowed** for that POST.
 
@@ -21,14 +21,14 @@ The Angular app calls **`POST /api/openrouter/v1/chat/completions`** on the **sa
 From the Angular project folder:
 
 ```bash
-cd app/hundredForm-converter
+cd app/hunderedform-converter
 npm install
 npm run build
 ```
 
 Copy the **browser** output into the landing tree (replace hashes if they changed):
 
-- From: `app/hundredForm-converter/dist/hundredForm-converter/browser/`
+- From: `app/hunderedform-converter/dist/hunderedform-converter/browser/`
 - To: `app/browser/` (at the repo root)
 
 Update **`index.html`** if file names changed (for example `main-*.js`, `styles-*.css`, chunk names under `app/browser/`).
@@ -45,7 +45,7 @@ The repo includes **`landing-server.mjs`** next to `index.html`. It:
 **PowerShell:**
 
 ```powershell
-cd "D:\HundredForm Resume Optimizer"   # repo root (folder that contains index.html)
+cd "D:\Hunderedform Resume Optimizer"   # repo root (folder that contains index.html)
 $env:OPENROUTER_API_KEY = "sk-or-v1-..."   # your key
 $env:PORT = "8080"
 node landing-server.mjs
@@ -76,11 +76,11 @@ Then run `node landing-server.mjs` with **no** PowerShell env vars. The server l
 If you serve only the Angular **dist** output (not the root `index.html`):
 
 ```powershell
-cd app/hundredForm-converter
+cd app/hunderedform-converter
 npm run build
 $env:OPENROUTER_API_KEY = "sk-or-v1-..."
 $env:PORT = "8080"
-node dist/hundredForm-converter/server/server.mjs
+node dist/hunderedform-converter/server/server.mjs
 ```
 
 That uses the Express app in `src/server.ts`, which includes the same OpenRouter proxy route.
@@ -105,7 +105,7 @@ To deploy the application, you need a Node.js server that can serve the static f
 |--------|----------------|
 | **405** on `POST /api/openrouter/...` | Static server only (no Node `landing-server.mjs`). |
 | **401** `User not found` (from OpenRouter) | Wrong, revoked, or extra-whitespace API key. Regenerate at [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys), update repo-root `.env`, restart the server; test with `curl -s -H "Authorization: Bearer YOUR_KEY" https://openrouter.ai/api/v1/auth/key`. |
-| **503** `no healthy upstream` / `Provider returned error` | OpenRouter could not reach that model’s host (often on free or busy routes). Retry later, or set `ai_model.model_name` in `app/hundredForm-converter/src/environments/environment.ts` to `openrouter/free` or another model from [openrouter.ai/models](https://openrouter.ai/models); paid models are more reliable. |
+| **503** `no healthy upstream` / `Provider returned error` | OpenRouter could not reach that model’s host (often on free or busy routes). Retry later, or set `ai_model.model_name` in `app/hunderedform-converter/src/environments/environment.ts` to `openrouter/free` or another model from [openrouter.ai/models](https://openrouter.ai/models); paid models are more reliable. |
 | **503** "missing API key" (your proxy) | `OPENROUTER_API_KEY` not set on the server process. |
 | **404** on API path | Server not configured to handle `/api/openrouter/...` path. |
 | Chunks fail to load | Wrong paths in `index.html` after a new Angular build; copy all new `app/browser` files and update hashes. |
@@ -118,7 +118,7 @@ To deploy the application, you need a Node.js server that can serve the static f
 |------|------|
 | `index.html` | Landing page + embeds Angular from `app/browser/`. |
 | `app/browser/` | Angular **browser** build output (copy from `dist/.../browser/`). |
-| `app/hundredForm-converter/` | Angular **source** and SSR server (`src/server.ts`). |
+| `app/hunderedform-converter/` | Angular **source** and SSR server (`src/server.ts`). |
 | `landing-server.mjs` | Local static + OpenRouter proxy (no extra npm deps). |
 | `js/`, `css/`, `media/`, `favicon/` | Landing assets. |
 

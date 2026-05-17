@@ -1,5 +1,5 @@
 {
-  "name": "hundredform-resume-optimizer",
+  "name": "hunderedform-resume-optimizer",
   "private": true,
   "description": "Landing page + Angular browser build. Use landing-server.mjs so POST /api/openrouter works.",
   "scripts": {

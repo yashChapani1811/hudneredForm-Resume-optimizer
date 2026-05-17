@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ATS scanner resume thumbnail</title>
+  <desc id="desc">A resume being scanned by ATS software with a compatibility score.</desc>
+  <rect width="1200" height="630" fill="#07111E"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="114" y="86" width="440" height="458" rx="30" fill="#F8FAFC"/>
+  <rect x="164" y="148" width="230" height="18" rx="9" fill="#111827"/>
+  <rect x="164" y="206" width="322" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="164" y="242" width="274" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="164" y="278" width="300" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="164" y="356" width="312" height="68" rx="18" fill="#DCFCE7"/>
+  <path d="M114 316h440" stroke="#22C55E" stroke-width="10" opacity=".75"/>
+  <circle cx="820" cy="302" r="150" fill="white" opacity=".09" stroke="white" stroke-opacity=".2"/>
+  <text x="742" y="322" fill="white" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">92</text>
+  <text x="850" y="322" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">%</text>
+  <text x="660" y="456" fill="white" font-family="Inter, Arial, sans-serif" font-size="55" font-weight="900">Pass ATS scanners</text>
+  <text x="664" y="504" fill="#BBF7D0" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600">Build a resume machines can read.</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E" stop-opacity=".38"/>
+      <stop offset=".5" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity=".34"/>
+    </linearGradient>
+  </defs>
+</svg>

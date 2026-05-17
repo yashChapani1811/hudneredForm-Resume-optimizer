@@ -216,12 +216,12 @@ function trackPerformanceMetrics() {
 
 function sendToAnalytics(e, t) {
     try {
-        const n = JSON.parse(localStorage.getItem("hundredform_analytics") || "[]");
+        const n = JSON.parse(localStorage.getItem("hunderedform_analytics") || "[]");
         n.push({
             event: e,
             data: t,
             timestamp: (new Date).toISOString()
-        }), n.length > 100 && n.splice(0, n.length - 100), localStorage.setItem("hundredform_analytics", JSON.stringify(n))
+        }), n.length > 100 && n.splice(0, n.length - 100), localStorage.setItem("hunderedform_analytics", JSON.stringify(n))
     } catch (e) {
         console.error("Failed to send analytics data:", e)
     }
@@ -248,14 +248,14 @@ function generateSessionId() {
 
 function getAnalyticsData() {
     try {
-        return JSON.parse(localStorage.getItem("hundredform_analytics") || "[]")
+        return JSON.parse(localStorage.getItem("hunderedform_analytics") || "[]")
     } catch (e) {
         return console.error("Failed to get analytics data:", e), []
     }
 }
 
 function clearAnalyticsData() {
-    localStorage.removeItem("hundredform_analytics")
+    localStorage.removeItem("hunderedform_analytics")
 }
 
 function exportAnalyticsData() {
@@ -265,7 +265,7 @@ function exportAnalyticsData() {
         }),
         n = URL.createObjectURL(t),
         i = document.createElement("a");
-    i.href = n, i.download = "hundredform-analytics.json", i.click(), URL.revokeObjectURL(n)
+    i.href = n, i.download = "hunderedform-analytics.json", i.click(), URL.revokeObjectURL(n)
 }
 document.addEventListener("DOMContentLoaded", function() {
     initializeTracking()

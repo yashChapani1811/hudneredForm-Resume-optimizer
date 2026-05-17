@@ -1,5 +1,5 @@
 /**
- * HundredForm — ScrollTrigger Smooth Scroll Integration
+ * Hunderedform — ScrollTrigger Smooth Scroll Integration
  * Uses GSAP ScrollTrigger + ScrollToPlugin for enhanced smooth scrolling,
  * active link highlighting, scroll progress, and parallax effects.
  */
