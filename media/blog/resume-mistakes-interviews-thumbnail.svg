@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Resume mistakes costing interviews thumbnail</title>
+  <desc id="desc">A resume review dashboard highlighting mistakes that can cost job interviews.</desc>
+  <rect width="1200" height="630" fill="#080B16"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="90" r="210" fill="#7C3AED" opacity=".26"/>
+  <circle cx="150" cy="560" r="260" fill="#2563EB" opacity=".24"/>
+  <rect x="110" y="92" width="980" height="446" rx="34" fill="white" opacity=".08" stroke="white" stroke-opacity=".18"/>
+  <rect x="158" y="144" width="390" height="342" rx="20" fill="#F8FAFC"/>
+  <rect x="198" y="190" width="230" height="18" rx="9" fill="#111827"/>
+  <rect x="198" y="238" width="270" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="198" y="268" width="306" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="198" y="298" width="250" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="198" y="360" width="290" height="58" rx="14" fill="#FEE2E2"/>
+  <path d="M222 389l18 18 34-44" stroke="#EF4444" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="616" y="170" width="306" height="44" rx="22" fill="#2563EB"/>
+  <text x="646" y="200" fill="white" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Featured resume guide</text>
+  <text x="616" y="288" fill="white" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">10 resume mistakes</text>
+  <text x="616" y="352" fill="#D8B4FE" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="900">costing interviews</text>
+  <text x="618" y="418" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="500">Spot issues before recruiters do.</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset=".48" stop-color="#17103A"/>
+      <stop offset="1" stop-color="#030712"/>
+    </linearGradient>
+  </defs>
+</svg>

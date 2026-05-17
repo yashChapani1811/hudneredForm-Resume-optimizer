@@ -1,0 +1,11 @@
+{
+  "name": "hunderedform-resume-optimizer",
+  "private": true,
+  "description": "Landing page + Angular browser build. Use landing-server.mjs so POST /api/openrouter works.",
+  "scripts": {
+    "start": "node landing-server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

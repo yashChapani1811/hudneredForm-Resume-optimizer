@@ -1,0 +1,227 @@
+function initializeApp() {
+    initializeNavigation(), initializeUpload(), bindLandingPageControls(), initializeFAQ(), initializeAnimations(), initializeFormValidation(), initializeMobileMenu(), console.log("Hunderedform Landing Page initialized successfully")
+}
+
+function initializeNavigation() {
+    const e = document.getElementById("navbar"),
+        t = document.querySelectorAll(".btn");
+    e && window.addEventListener("scroll", function() {
+        window.scrollY > 50 ? e.classList.add("scrolled") : e.classList.remove("scrolled")
+    }), t.forEach(e => {
+        e.addEventListener("click", function(e) {
+            createRipple(e, this)
+        })
+    })
+}
+
+function bindLandingPageControls() {
+    const e = document.getElementById("uploadArea"),
+        t = e ? e.querySelector("#fileInput") : document.getElementById("fileInput"),
+        n = () => t && t.click();
+    ["navCta", "navCtaMobile", "heroCta", "finalCtaBtn"].forEach(e => {
+        const t = document.getElementById(e);
+        t && t.addEventListener("click", n)
+    });
+    const i = e ? e.querySelector("#chooseFileBtn") : document.getElementById("chooseFileBtn");
+    i && t && i.addEventListener("click", function(e) {
+        e.stopPropagation(), n()
+    });
+    const o = document.getElementById("mobileMenuBtn"),
+        a = document.getElementById("mobileMenu");
+    o && a && (o.addEventListener("click", function() {
+        a.classList.toggle("hidden")
+    }), a.querySelectorAll('a[href^="#"]').forEach(e => {
+        e.addEventListener("click", function() {
+            a.classList.add("hidden")
+        })
+    }))
+}
+
+function initializeUpload() {
+    const e = document.getElementById("uploadBtn"),
+        t = document.getElementById("uploadArea"),
+        n = document.getElementById("fileInput");
+    t && n && (e && e.addEventListener("click", function() {
+        t.classList.toggle("hidden"), t.classList.contains("hidden") || t.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        })
+    }), t.addEventListener("click", function(e) {
+        e.target.closest("button") || n.click()
+    }), t.addEventListener("dragover", function(e) {
+        e.preventDefault(), this.classList.add("dragover")
+    }), t.addEventListener("dragleave", function(e) {
+        e.preventDefault(), this.classList.remove("dragover")
+    }), t.addEventListener("drop", function(e) {
+        e.preventDefault(), this.classList.remove("dragover");
+        const t = e.dataTransfer.files;
+        t.length > 0 && handleFileUpload(t[0])
+    }), n.addEventListener("change", function(e) {
+        e.target.files.length > 0 && handleFileUpload(e), e.target.value = ""
+    }))
+}
+
+function handleFileUpload(e) {
+    const t = e && e.target && e.target.files ? e.target.files[0] : e;
+    if (!t) return;
+    const n = "." + t.name.split(".").pop().toLowerCase();
+    if (!["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"].includes(t.type) && ![".pdf", ".doc", ".docx"].includes(n)) return void showNotification("Please upload a PDF, DOC, or DOCX file", "error");
+    t.size > 10485760 ? showNotification("File size must be less than 10MB", "error") : setTimeout(() => {
+        showUploadSuccess(t.name)
+    }, 650)
+}
+
+function showUploadSuccess(e) {
+    if (showNotification(`Received “${e}”. Demo score: 82/100 — scroll to the live preview for sample suggestions.`, "success"), "function" == typeof scrollToElement) scrollToElement("demo", 12);
+    else {
+        const e = document.getElementById("demo");
+        e && e.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    }
+}
+
+function showDetailedAnalysis() {
+    showNotification("Detailed analysis would open in a modal or new page", "info")
+}
+
+function initializeFAQ() {
+    const e = document.querySelectorAll(".faq-item");
+    e.forEach(t => {
+        const n = t.querySelector(".faq-question"),
+            i = t.querySelector(".faq-answer"),
+            o = t.querySelector(".faq-icon");
+        n && i && o && n.addEventListener("click", function() {
+            const n = t.classList.contains("active");
+            e.forEach(e => {
+                if (e !== t) {
+                    e.classList.remove("active");
+                    const t = e.querySelector(".faq-answer"),
+                        n = e.querySelector(".faq-icon");
+                    t && (t.style.maxHeight = "0"), n && (n.style.transform = "rotate(0deg)")
+                }
+            }), n ? (t.classList.remove("active"), i.style.maxHeight = "0", o.style.transform = "rotate(0deg)") : (t.classList.add("active"), i.style.maxHeight = i.scrollHeight + "px", o.style.transform = "rotate(180deg)")
+        })
+    })
+}
+
+function initializeAnimations() {}
+
+function initializeFormValidation() {
+    document.querySelectorAll('input[type="email"]').forEach(e => {
+        e.addEventListener("blur", function() {
+            validateEmail(this)
+        }), e.addEventListener("input", function() {
+            this.classList.remove("error");
+            const e = this.parentNode.querySelector(".error-message");
+            e && e.remove()
+        })
+    })
+}
+
+function validateEmail(e) {
+    const t = e.value.trim();
+    if (t && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)) {
+        e.classList.add("error");
+        const t = e.parentNode.querySelector(".error-message");
+        t && t.remove();
+        const n = document.createElement("div");
+        return n.className = "error-message text-red-500 text-sm mt-1", n.textContent = "Please enter a valid email address", e.parentNode.appendChild(n), !1
+    }
+    return !0
+}
+
+function initializeMobileMenu() {
+    const e = document.querySelector(".mobile-menu-btn"),
+        t = document.querySelector(".mobile-menu");
+    e && t && e.addEventListener("click", function() {
+        t.classList.toggle("active"), this.classList.toggle("active")
+    })
+}
+
+function createRipple(e, t) {
+    const n = document.createElement("span"),
+        i = t.getBoundingClientRect(),
+        o = Math.max(i.width, i.height),
+        a = e.clientX - i.left - o / 2,
+        s = e.clientY - i.top - o / 2;
+    if (n.style.width = n.style.height = o + "px", n.style.left = a + "px", n.style.top = s + "px", n.classList.add("ripple"), !document.querySelector("#ripple-styles")) {
+        const e = document.createElement("style");
+        e.id = "ripple-styles", e.textContent = "\n            .ripple {\n                position: absolute;\n                border-radius: 50%;\n                background: rgba(255, 255, 255, 0.6);\n                transform: scale(0);\n                animation: ripple-animation 0.6s ease-out;\n                pointer-events: none;\n            }\n            \n            @keyframes ripple-animation {\n                to {\n                    transform: scale(4);\n                    opacity: 0;\n                }\n            }\n            \n            .btn {\n                position: relative;\n                overflow: hidden;\n            }\n        ", document.head.appendChild(e)
+    }
+    t.appendChild(n), setTimeout(() => {
+        n.remove()
+    }, 600)
+}
+
+function showNotification(e, t = "info") {
+    const n = document.querySelector(".notification");
+    n && n.remove();
+    const i = document.createElement("div");
+    i.className = `notification notification-${t}`, Object.assign(i.style, {
+        position: "fixed",
+        top: "20px",
+        right: "20px",
+        padding: "16px 24px",
+        borderRadius: "8px",
+        color: "white",
+        fontWeight: "500",
+        zIndex: "9999",
+        transform: "translateX(100%)",
+        transition: "transform 0.3s ease",
+        maxWidth: "400px",
+        wordWrap: "break-word"
+    });
+    const o = {
+        success: "#10B981",
+        error: "#EF4444",
+        warning: "#F59E0B",
+        info: "#3B82F6"
+    };
+    i.style.backgroundColor = o[t] || o.info, i.textContent = e, document.body.appendChild(i), setTimeout(() => {
+        i.style.transform = "translateX(0)"
+    }, 100), setTimeout(() => {
+        i.style.transform = "translateX(100%)", setTimeout(() => {
+            i.parentNode && i.remove()
+        }, 300)
+    }, 5e3)
+}
+document.addEventListener("DOMContentLoaded", function() {
+    initializeApp()
+});
+const Utils = {
+    debounce: function(e, t) {
+        let n;
+        return function(...i) {
+            clearTimeout(n), n = setTimeout(() => {
+                clearTimeout(n), e(...i)
+            }, t)
+        }
+    },
+    throttle: function(e, t) {
+        let n;
+        return function() {
+            const i = arguments,
+                o = this;
+            n || (e.apply(o, i), n = !0, setTimeout(() => n = !1, t))
+        }
+    },
+    random: function(e) {
+        return e[Math.floor(Math.random() * e.length)]
+    },
+    formatFileSize: function(e) {
+        if (0 === e) return "0 Bytes";
+        const t = Math.floor(Math.log(e) / Math.log(1024));
+        return parseFloat((e / Math.pow(1024, t)).toFixed(2)) + " " + ["Bytes", "KB", "MB", "GB"][t]
+    }
+};
+window.Utils = Utils, document.addEventListener("visibilitychange", function() {
+    document.hidden ? console.log("Page hidden") : console.log("Page visible")
+}), window.addEventListener("error", function(e) {
+    console.error("JavaScript error:", e.error)
+}), "undefined" != typeof module && module.exports && (module.exports = {
+    initializeApp: initializeApp,
+    showNotification: showNotification,
+    Utils: Utils
+});
